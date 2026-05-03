@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sean's Guitar Lessons | Murrieta & Temecula, CA</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Georgia', serif; color: #1a1a1a; background: #fff; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(15,10,5,0.95);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+    }
+    .nav-logo {
+      font-family: 'Georgia', serif;
+      font-size: 1.4rem; font-weight: bold;
+      color: #e8a435;
+      letter-spacing: 1px;
+    }
+    .nav-logo span { color: #fff; }
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+    .nav-links a {
+      color: #ccc; text-decoration: none; font-size: 0.9rem;
+      letter-spacing: 1px; text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: #e8a435; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f0a05 0%, #1a0f02 40%, #2d1a04 70%, #1a0f02 100%);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 100px 20px 60px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(232,164,53,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 30%, rgba(180,100,20,0.1) 0%, transparent 50%);
+    }
+    .hero-guitar-art {
+      position: absolute; right: -40px; top: 50%; transform: translateY(-50%);
+      opacity: 0.06; font-size: 500px; line-height: 1;
+      color: #e8a435; pointer-events: none; user-select: none;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(232,164,53,0.15); border: 1px solid rgba(232,164,53,0.4);
+      color: #e8a435; padding: 8px 20px; border-radius: 50px;
+      font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero h1 em { color: #e8a435; font-style: italic; }
+    .hero p {
+      font-size: 1.2rem; color: #bbb; line-height: 1.7;
+      max-width: 550px; margin: 0 auto 40px;
+      font-family: Arial, sans-serif;
+    }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #e8a435; color: #0f0a05;
+      padding: 16px 36px; border-radius: 6px;
+      text-decoration: none; font-weight: bold;
+      font-size: 1rem; font-family: Arial, sans-serif;
+      letter-spacing: 1px; text-transform: uppercase;
+      transition: all 0.3s; display: inline-block;
+      box-shadow: 0 4px 20px rgba(232,164,53,0.4);
+    }
+    .btn-primary:hover { background: #f5b840; transform: translateY(-2px); box-shadow: 0 6px 30px rgba(232,164,53,0.5); }
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.3); color: #fff;
+      padding: 14px 34px; border-radius: 6px;
+      text-decoration: none; font-size: 1rem;
+      font-family: Arial, sans-serif; letter-spacing: 1px;
+      text-transform: uppercase; transition: all 0.3s; display: inline-block;
+    }
+    .btn-outline:hover { border-color: #e8a435; color: #e8a435; }
+    .hero-note {
+      margin-top: 25px; color: #666; font-size: 0.85rem;
+      font-family: Arial, sans-serif;
+    }
+    .hero-note strong { color: #e8a435; }
+
+    /* STATS STRIP */
+    .stats-strip {
+      background: #e8a435;
+      padding: 30px 40px;
+      display: flex; justify-content: center; gap: 60px; flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 2.2rem; font-weight: bold; color: #0f0a05; line-height: 1; }
+    .stat-label { font-size: 0.8rem; color: rgba(15,10,5,0.7); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; font-family: Arial, sans-serif; }
+
+    /* SECTION TEMPLATE */
+    section { padding: 90px 20px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      display: inline-block; color: #e8a435;
+      font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+      margin-bottom: 12px; font-family: Arial, sans-serif;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: #1a1a1a; line-height: 1.2; margin-bottom: 16px;
+    }
+    .section-sub {
+      color: #666; font-size: 1.05rem; line-height: 1.7;
+      font-family: Arial, sans-serif; max-width: 580px;
+    }
+
+    /* SERVICES */
+    #services { background: #f8f4ef; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; margin-top: 50px;
+    }
+    .service-card {
+      background: #fff; border-radius: 12px;
+      padding: 36px 30px;
+      border: 1px solid #e8e0d0;
+      transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::before {
+      content: ''; position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: #e8a435;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon { font-size: 2.5rem; margin-bottom: 18px; }
+    .service-card h3 { font-size: 1.25rem; color: #1a1a1a; margin-bottom: 10px; }
+    .service-card p { color: #666; font-size: 0.95rem; line-height: 1.6; font-family: Arial, sans-serif; }
+    .service-price {
+      margin-top: 18px; padding-top: 18px;
+      border-top: 1px solid #e8e0d0;
+      font-family: Arial, sans-serif;
+    }
+    .service-price .price { font-size: 1.5rem; font-weight: bold; color: #e8a435; }
+    .service-price .per { font-size: 0.85rem; color: #999; }
+
+    /* WHO I TEACH */
+    #levels { background: #fff; }
+    .levels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px; margin-top: 50px;
+    }
+    .level-card {
+      text-align: center; padding: 30px 20px;
+      border-radius: 12px;
+      background: #f8f4ef;
+      transition: all 0.3s;
+    }
+    .level-card:hover { background: #0f0a05; }
+    .level-card:hover .level-title, .level-card:hover .level-desc { color: #fff; }
+    .level-card:hover .level-emoji { filter: none; }
+    .level-emoji { font-size: 2.8rem; margin-bottom: 14px; display: block; }
+    .level-title { font-size: 1.1rem; font-weight: bold; color: #1a1a1a; margin-bottom: 8px; transition: color 0.3s; }
+    .level-desc { font-size: 0.9rem; color: #666; line-height: 1.5; font-family: Arial, sans-serif; transition: color 0.3s; }
+
+    /* ABOUT */
+    #about { background: #0f0a05; }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center; margin-top: 20px;
+    }
+    .about-visual {
+      background: linear-gradient(135deg, #1a0f02, #2d1a04);
+      border-radius: 16px; padding: 60px 40px;
+      text-align: center;
+      border: 1px solid rgba(232,164,53,0.2);
+    }
+    .guitar-icon { font-size: 8rem; opacity: 0.9; }
+    .about-tagline {
+      color: #e8a435; font-size: 1.1rem; font-style: italic;
+      margin-top: 20px; line-height: 1.5;
+    }
+    #about .section-label { color: #e8a435; }
+    #about .section-title { color: #fff; }
+    .about-text { color: #bbb; font-size: 1rem; line-height: 1.8; font-family: Arial, sans-serif; margin-bottom: 20px; }
+    .about-highlights { display: flex; flex-direction: column; gap: 14px; margin-top: 30px; }
+    .highlight {
+      display: flex; align-items: center; gap: 12px;
+      color: #ccc; font-family: Arial, sans-serif; font-size: 0.95rem;
+    }
+    .highlight-dot { width: 8px; height: 8px; background: #e8a435; border-radius: 50%; flex-shrink: 0; }
+
+    /* FREE TRIAL BANNER */
+    .free-trial {
+      background: linear-gradient(135deg, #e8a435 0%, #c8831a 100%);
+      padding: 60px 20px; text-align: center;
+    }
+    .free-trial h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); color: #0f0a05; margin-bottom: 14px; }
+    .free-trial p { color: rgba(15,10,5,0.75); font-size: 1.05rem; font-family: Arial, sans-serif; margin-bottom: 30px; }
+    .btn-dark {
+      background: #0f0a05; color: #e8a435;
+      padding: 16px 40px; border-radius: 6px;
+      text-decoration: none; font-weight: bold;
+      font-size: 1rem; font-family: Arial, sans-serif;
+      letter-spacing: 1px; text-transform: uppercase;
+      transition: all 0.3s; display: inline-block;
+    }
+    .btn-dark:hover { background: #1a0f02; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+
+    /* CONTACT */
+    #contact { background: #f8f4ef; }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; margin-top: 50px; align-items: start;
+    }
+    .contact-info h3 { font-size: 1.4rem; margin-bottom: 30px; color: #1a1a1a; }
+    .contact-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      margin-bottom: 24px;
+    }
+    .contact-icon {
+      width: 44px; height: 44px; background: #e8a435;
+      border-radius: 10px; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .contact-item-text { font-family: Arial, sans-serif; }
+    .contact-item-text strong { color: #1a1a1a; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px; }
+    .contact-item-text a, .contact-item-text span { color: #555; font-size: 1rem; text-decoration: none; }
+    .contact-item-text a:hover { color: #e8a435; }
+    .contact-form-box {
+      background: #fff; padding: 40px; border-radius: 16px;
+      border: 1px solid #e8e0d0;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+    }
+    .contact-form-box h3 { font-size: 1.3rem; margin-bottom: 24px; color: #1a1a1a; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block; font-size: 0.85rem; text-transform: uppercase;
+      letter-spacing: 1px; color: #888; margin-bottom: 6px;
+      font-family: Arial, sans-serif;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 12px 16px;
+      border: 1px solid #ddd; border-radius: 8px;
+      font-size: 1rem; font-family: Arial, sans-serif;
+      color: #333; background: #fafafa;
+      transition: border-color 0.3s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: #e8a435; background: #fff;
+    }
+    .form-group textarea { height: 100px; resize: vertical; }
+    .btn-submit {
+      width: 100%; background: #e8a435; color: #0f0a05;
+      padding: 14px; border: none; border-radius: 8px;
+      font-size: 1rem; font-weight: bold; cursor: pointer;
+      font-family: Arial, sans-serif; letter-spacing: 1px;
+      text-transform: uppercase; transition: all 0.3s;
+    }
+    .btn-submit:hover { background: #f5b840; }
+
+    /* FOOTER */
+    footer {
+      background: #0f0a05; color: #555;
+      text-align: center; padding: 40px 20px;
+      font-family: Arial, sans-serif; font-size: 0.9rem;
+    }
+    footer .footer-logo { color: #e8a435; font-size: 1.3rem; font-weight: bold; margin-bottom: 12px; font-family: Georgia, serif; }
+    footer p { line-height: 1.8; }
+    footer a { color: #e8a435; text-decoration: none; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .stats-strip { gap: 30px; padding: 24px 20px; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+      .about-visual { padding: 40px 20px; }
+      section { padding: 60px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-logo">🎸 Sean's <span>Guitar</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Lessons</a></li>
+    <li><a href="#levels">Who I Teach</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-guitar-art">♪</div>
+  <div class="hero-content">
+    <div class="hero-badge">🎸 Guitar Lessons · Murrieta & Temecula, CA</div>
+    <h1>Learn Guitar the <em>Right Way</em> — From Day One</h1>
+    <p>Private lessons for acoustic & electric guitar. All ages, all skill levels. In-person or online. Your first lesson is completely FREE — no strings attached.</p>
+    <div class="hero-buttons">
+      <a href="tel:9517950651" class="btn-primary">📞 Book Free Lesson</a>
+      <a href="#services" class="btn-outline">See Lesson Options</a>
+    </div>
+    <p class="hero-note">Call or text <strong>(951) 795-0651</strong> — usually responds within the hour</p>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat">
+    <div class="stat-num">20+</div>
+    <div class="stat-label">Years Playing</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">All Ages</div>
+    <div class="stat-label">Kids to Adults</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">FREE</div>
+    <div class="stat-label">First Lesson Trial</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">1-on-1</div>
+    <div class="stat-label">Private Sessions</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <span class="section-label">Lesson Options</span>
+    <h2 class="section-title">Everything You Need to Play Guitar</h2>
+    <p class="section-sub">Flexible formats designed around your schedule, goals, and preferred style. Whether you're picking up a guitar for the first time or want to sharpen your skills, there's a lesson for you.</p>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">🎵</div>
+        <h3>Private In-Person Lessons</h3>
+        <p>One-on-one lessons in Murrieta or Temecula. The most effective way to learn — personalized feedback, customized curriculum, and real accountability every session.</p>
+        <div class="service-price">
+          <span class="price">$40–$60</span>
+          <span class="per"> / 30–60 min session</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Online Video Lessons</h3>
+        <p>Can't make it in person? No problem. Learn from the comfort of your home via video call. Same personalized approach, just delivered digitally.</p>
+        <div class="service-price">
+          <span class="price">$35–$55</span>
+          <span class="per"> / 30–60 min session</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <h3>Small Group Lessons</h3>
+        <p>Want to learn with a friend or sibling? Group lessons are available for 2–4 students. A fun, affordable option that keeps you motivated and accountable.</p>
+        <div class="service-price">
+          <span class="price">$25–$35</span>
+          <span class="per"> / person per session</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎸</div>
+        <h3>Acoustic Guitar Focus</h3>
+        <p>Fingerpicking, chords, strumming patterns, folk, pop, and singer-songwriter styles. Build a solid acoustic foundation that will serve you for life.</p>
+        <div class="service-price">
+          <span class="price">Included</span>
+          <span class="per"> in any lesson format</span>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Electric Guitar Focus</h3>
+        <p>Rock, blues, metal, and lead playing. Learn riffs, solos, scales, and technique tailored to the music you love. Amp setup and tone guidance included.</p>
+        <div class="service-price">
+          <span class="price">Included</span>
+          <span class="per"> in any lesson format</span>
+        </div>
+      </div>
+
+      <div class="service-card" style="background: #0f0a05; border-color: #e8a435;">
+        <div class="service-icon">🎁</div>
+        <h3 style="color: #e8a435;">FREE Trial Lesson</h3>
+        <p style="color: #aaa;">Not sure if guitar is for you? Try a FREE 30-minute trial lesson with zero commitment. See if Sean's teaching style is the right fit — no payment needed.</p>
+        <div class="service-price" style="border-top-color: #2a1a04;">
+          <span class="price">$0</span>
+          <span class="per" style="color: #888;"> — completely free, no catch</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WHO I TEACH -->
+<section id="levels">
+  <div class="container">
+    <span class="section-label">Skill Levels</span>
+    <h2 class="section-title">No Matter Where You Are, You Belong Here</h2>
+    <p class="section-sub">Every guitarist starts somewhere. Sean teaches students of every age and level — from absolute beginners to experienced players looking to break through plateaus.</p>
+    <div class="levels-grid">
+
+      <div class="level-card">
+        <span class="level-emoji">🌱</span>
+        <div class="level-title">Complete Beginner</div>
+        <div class="level-desc">Never touched a guitar? Perfect. We'll start from scratch — notes, chords, posture, and your first song.</div>
+      </div>
+
+      <div class="level-card">
+        <span class="level-emoji">🎵</span>
+        <div class="level-title">Casual Player</div>
+        <div class="level-desc">Know a few chords but feel stuck? We'll build on your foundation, fix bad habits, and unlock new techniques.</div>
+      </div>
+
+      <div class="level-card">
+        <span class="level-emoji">🚀</span>
+        <div class="level-title">Intermediate</div>
+        <div class="level-desc">Ready to break through to the next level. Scales, music theory, lead playing, and real song mastery.</div>
+      </div>
+
+      <div class="level-card">
+        <span class="level-emoji">👶</span>
+        <div class="level-title">Kids & Teens</div>
+        <div class="level-desc">Fun, patient lessons designed to keep young learners engaged and motivated. Ages 7 and up welcome.</div>
+      </div>
+
+      <div class="level-card">
+        <span class="level-emoji">🏠</span>
+        <div class="level-title">Adults & Seniors</div>
+        <div class="level-desc">It's never too late to learn. Lessons are paced for adult learners with busy schedules and real life commitments.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="guitar-icon">🎸</div>
+        <div class="about-tagline">"Every student deserves a teacher who believes in them."</div>
+      </div>
+      <div>
+        <span class="section-label">About Sean</span>
+        <h2 class="section-title" style="color: #fff;">A Local Guitar Teacher Who Actually Cares</h2>
+        <p class="about-text">Sean has been playing and teaching guitar in the Murrieta and Temecula area for years. With a genuine love for music and a patient, encouraging teaching style, he has helped students of all ages discover the joy of playing guitar.</p>
+        <p class="about-text">He adapts every lesson to the individual student — your goals, your musical taste, your pace. Whether you want to play campfire songs, shred solos, or write your own music, Sean will help you get there.</p>
+        <div class="about-highlights">
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span>Private one-on-one instruction tailored to your goals</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span>Teaches acoustic AND electric guitar — you choose the style</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span>Available in-person in Murrieta/Temecula or online</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span>Patient, encouraging approach — no judgment, just progress</span>
+          </div>
+          <div class="highlight">
+            <div class="highlight-dot"></div>
+            <span>Free 30-minute trial lesson for all new students</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE TRIAL BANNER -->
+<div class="free-trial">
+  <div class="container" style="max-width: 700px;">
+    <h2>🎸 Your First Lesson is FREE</h2>
+    <p>Try a 30-minute lesson with no commitment and no payment. If you love it, we'll set up a regular schedule. If not — no hard feelings. Ready to play?</p>
+    <a href="tel:9517950651" class="btn-dark">Call (951) 795-0651 to Schedule</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <span class="section-label">Get In Touch</span>
+    <h2 class="section-title">Ready to Start Playing?</h2>
+    <p class="section-sub">Reach out by phone, text, or email. Sean typically responds within a few hours and can usually schedule your free trial lesson within the week.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div class="contact-item-text">
+            <strong>Phone / Text</strong>
+            <a href="tel:9517950651">(951) 795-0651</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <a href="mailto:mrmoowageeee@gmail.com">mrmoowageeee@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div class="contact-item-text">
+            <strong>Location</strong>
+            <span>Murrieta & Temecula, CA<br/>In-home or online available</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div class="contact-item-text">
+            <strong>Availability</strong>
+            <span>Flexible scheduling<br/>Evenings & weekends available</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-box">
+        <h3>Send a Quick Message</h3>
+        <form action="mailto:mrmoowageeee@gmail.com" method="post" enctype="text/plain">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="First & Last Name" required />
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="(951) 000-0000" />
+          </div>
+          <div class="form-group">
+            <label>Lesson Type</label>
+            <select name="lesson_type">
+              <option>Free Trial Lesson (30 min)</option>
+              <option>Private In-Person Lesson</option>
+              <option>Online Video Lesson</option>
+              <option>Small Group Lesson</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Skill Level</label>
+            <select name="skill_level">
+              <option>Complete Beginner</option>
+              <option>Some Experience</option>
+              <option>Intermediate Player</option>
+              <option>Lessons for My Child (ages 7+)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message (Optional)</label>
+            <textarea name="message" placeholder="Tell Sean your goals, preferred days/times, etc..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">🎸 Request a Lesson</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">🎸 Sean's Guitar Lessons</div>
+  <p>
+    Murrieta &amp; Temecula, CA &nbsp;·&nbsp;
+    <a href="tel:9517950651">(951) 795-0651</a> &nbsp;·&nbsp;
+    <a href="mailto:mrmoowageeee@gmail.com">mrmoowageeee@gmail.com</a>
+  </p>
+  <p style="margin-top: 12px; font-size: 0.8rem; color: #333;">
+    Acoustic &amp; Electric Guitar · All Ages &amp; Skill Levels · In-Person &amp; Online · Murrieta/Temecula, CA
+  </p>
+  <p style="margin-top: 16px; font-size: 0.75rem; color: #2a2a2a;">
+    © 2026 Sean's Guitar Lessons — All rights reserved
+  </p>
+</footer>
+
+</body>
+</html>

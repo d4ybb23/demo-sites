@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kingdom Gym – Fitness & Boxing | Temecula, CA</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a1a; background: #fff; }
+    a { text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,10,0.95);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 40px;
+    }
+    .nav-logo { color: #f4c542; font-size: 22px; font-weight: 800; letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { color: #ccc; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; transition: color 0.2s; }
+    .nav-links a:hover { color: #f4c542; }
+    .nav-cta {
+      background: #f4c542; color: #000; font-weight: 700; font-size: 14px;
+      padding: 10px 22px; border-radius: 4px; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #e0b030; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1c1c2e 60%, #2a1a0a 100%);
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 120px 20px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f4c542' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 780px; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(244,197,66,0.15); border: 1px solid rgba(244,197,66,0.4);
+      color: #f4c542; font-size: 13px; font-weight: 700; letter-spacing: 2px;
+      padding: 7px 20px; border-radius: 30px; margin-bottom: 24px; text-transform: uppercase;
+    }
+    .hero h1 {
+      color: #fff; font-size: clamp(44px, 7vw, 80px); font-weight: 900;
+      line-height: 1.05; margin-bottom: 12px; letter-spacing: -1px;
+    }
+    .hero h1 span { color: #f4c542; }
+    .hero-sub {
+      color: #aaa; font-size: 18px; margin-bottom: 36px; line-height: 1.6; max-width: 580px; margin-left: auto; margin-right: auto;
+    }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      background: #f4c542; color: #000; font-size: 16px; font-weight: 800;
+      padding: 16px 38px; border-radius: 6px; display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: #e0b030; transform: translateY(-2px); }
+    .btn-secondary {
+      border: 2px solid rgba(255,255,255,0.3); color: #fff; font-size: 16px; font-weight: 700;
+      padding: 14px 36px; border-radius: 6px; display: inline-block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover { border-color: #f4c542; color: #f4c542; }
+    .hero-stats {
+      margin-top: 56px; display: flex; justify-content: center; gap: 56px; flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { color: #f4c542; font-size: 36px; font-weight: 900; line-height: 1; }
+    .stat-label { color: #888; font-size: 13px; margin-top: 4px; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* SECTIONS */
+    section { padding: 90px 20px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      color: #f4c542; font-size: 12px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; margin-bottom: 12px; display: block;
+    }
+    .section-title {
+      font-size: clamp(28px, 4vw, 46px); font-weight: 900; line-height: 1.1; margin-bottom: 16px;
+    }
+    .section-desc { color: #666; font-size: 17px; line-height: 1.7; max-width: 560px; }
+
+    /* SERVICES */
+    #services { background: #f7f7f7; }
+    .services-header { text-align: center; margin-bottom: 56px; }
+    .services-header .section-desc { margin: 0 auto; }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
+    }
+    .service-card {
+      background: #fff; border-radius: 12px; padding: 36px 30px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+      border-top: 4px solid #f4c542;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+    .service-icon { font-size: 40px; margin-bottom: 16px; }
+    .service-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+    .service-card p { color: #666; font-size: 15px; line-height: 1.6; }
+    .service-price {
+      margin-top: 18px; color: #f4c542; font-size: 22px; font-weight: 900;
+    }
+
+    /* ABOUT */
+    #about { background: #0a0a0a; }
+    .about-inner {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .about-visual {
+      background: linear-gradient(135deg, #1c1c2e, #2a1a0a);
+      border-radius: 16px; padding: 60px 40px; text-align: center;
+      border: 1px solid rgba(244,197,66,0.2);
+    }
+    .about-visual .big-text {
+      font-size: 80px; font-weight: 900; color: #f4c542; line-height: 1;
+    }
+    .about-visual .big-sub { color: #aaa; font-size: 16px; margin-top: 8px; }
+    .about-content .section-title { color: #fff; }
+    .about-content .section-desc { color: #aaa; margin-bottom: 28px; }
+    .feature-list { list-style: none; }
+    .feature-list li {
+      color: #ccc; font-size: 15px; padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .feature-list li::before { content: '✦'; color: #f4c542; font-size: 12px; flex-shrink: 0; }
+
+    /* TESTIMONIALS */
+    #testimonials { background: #fff; }
+    .test-header { text-align: center; margin-bottom: 52px; }
+    .test-header .section-desc { margin: 0 auto; }
+    .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+    .test-card {
+      background: #f7f7f7; border-radius: 12px; padding: 32px 28px;
+      border-left: 4px solid #f4c542;
+    }
+    .stars { color: #f4c542; font-size: 20px; margin-bottom: 14px; }
+    .test-card p { color: #444; font-size: 15px; line-height: 1.7; font-style: italic; margin-bottom: 18px; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .reviewer-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: #f4c542; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; color: #000; font-size: 16px;
+    }
+    .reviewer-name { font-weight: 700; font-size: 15px; }
+    .reviewer-since { color: #999; font-size: 13px; }
+
+    /* CONTACT */
+    #contact { background: #0a0a0a; }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    #contact .section-title { color: #fff; }
+    #contact .section-desc { color: #aaa; margin-bottom: 36px; }
+    .contact-items { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item { display: flex; align-items: center; gap: 16px; }
+    .contact-item-icon {
+      width: 48px; height: 48px; background: rgba(244,197,66,0.15);
+      border: 1px solid rgba(244,197,66,0.3); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+    }
+    .contact-item-text strong { color: #fff; font-size: 15px; display: block; }
+    .contact-item-text span { color: #aaa; font-size: 14px; }
+    .contact-form {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px; padding: 36px;
+    }
+    .contact-form h3 { color: #fff; font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { color: #aaa; font-size: 13px; font-weight: 600; display: block; margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+      color: #fff; font-size: 14px; padding: 12px 14px; border-radius: 6px; outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: #f4c542;
+    }
+    .form-group textarea { min-height: 90px; resize: vertical; }
+    .form-group select option { background: #1a1a1a; }
+    .form-submit {
+      width: 100%; background: #f4c542; color: #000; font-size: 16px; font-weight: 800;
+      padding: 14px; border: none; border-radius: 6px; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: #e0b030; }
+
+    /* FOOTER */
+    footer {
+      background: #050505; color: #666; text-align: center;
+      padding: 32px 20px; font-size: 13px;
+    }
+    footer span { color: #f4c542; }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .about-inner, .contact-inner { grid-template-columns: 1fr; }
+      .hero-stats { gap: 32px; }
+      .about-visual { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">⚔️ KINGDOM GYM</div>
+  <div class="nav-links">
+    <a href="#services">Programs</a>
+    <a href="#about">About</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#contact">Join Now</a>
+  </div>
+  <a href="tel:9517220572" class="nav-cta">📞 Call Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-badge">🥊 Fitness &amp; Boxing Gym — Temecula, CA</span>
+    <h1>Train Like <span>Royalty.</span><br/>Fight Like a Champion.</h1>
+    <p class="hero-sub">Kingdom Gym is Temecula's premier fitness and boxing gym. Whether you're stepping in for the first time or training for your next fight — we build warriors here.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">🥊 Start Your Free Trial</a>
+      <a href="tel:9517220572" class="btn-secondary">📞 (951) 722-0572</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Members Trained</div></div>
+      <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Years of Excellence</div></div>
+      <div class="stat"><div class="stat-num">All</div><div class="stat-label">Fitness Levels</div></div>
+      <div class="stat"><div class="stat-num">Pro</div><div class="stat-label">Certified Coaches</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="services-header">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-title">World-Class Programs for Every Goal</h2>
+      <p class="section-desc">From boxing fundamentals to high-intensity fitness, Kingdom Gym has the right program to push you toward your personal best.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🥊</div>
+        <h3>Boxing Classes</h3>
+        <p>Learn proper technique, footwork, and combinations from certified boxing coaches. Beginner to advanced — all welcome.</p>
+        <div class="service-price">From $60/mo</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💪</div>
+        <h3>Strength & Conditioning</h3>
+        <p>Build explosive power and endurance with our specialized S&C program designed around real athletic performance.</p>
+        <div class="service-price">From $60/mo</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧑‍🤝‍🧑</div>
+        <h3>Group Fitness Classes</h3>
+        <p>High-energy group classes that combine cardio, core, and boxing drills. Great community, massive results.</p>
+        <div class="service-price">From $50/mo</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <h3>Personal Training</h3>
+        <p>One-on-one sessions with Coach Juliet tailored specifically to your body, goals, and schedule.</p>
+        <div class="service-price">From $80/session</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👦</div>
+        <h3>Youth Boxing Program</h3>
+        <p>Safe, structured boxing for kids and teens. Builds discipline, confidence, and fitness in a supportive environment.</p>
+        <div class="service-price">From $50/mo</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏆</div>
+        <h3>Competitive Fight Team</h3>
+        <p>Ready to compete? Our fight team trains seriously and competes locally and regionally. Join if you dare.</p>
+        <div class="service-price">By application</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-inner">
+      <div class="about-visual">
+        <div class="big-text">👑</div>
+        <div class="big-sub">Kingdom Gym — Temecula, CA</div>
+      </div>
+      <div class="about-content">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title" style="color:#fff;">Built on Grit.<br/>Run with Heart.</h2>
+        <p class="section-desc">Kingdom Gym was founded on one belief: that every person — regardless of fitness level — deserves access to elite coaching and a gym that feels like family. Head coach Juliet has spent over a decade transforming lives through boxing and fitness in the Temecula Valley.</p>
+        <ul class="feature-list">
+          <li>Professional-grade boxing ring and heavy bags</li>
+          <li>Certified coaches with competitive backgrounds</li>
+          <li>Beginner-friendly — zero intimidation policy</li>
+          <li>Flexible class schedules to fit any lifestyle</li>
+          <li>Clean, modern facility in Temecula, CA</li>
+          <li>All ages welcome — kids to adults</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="test-header">
+      <span class="section-label">Member Reviews</span>
+      <h2 class="section-title">What Our Members Are Saying</h2>
+      <p class="section-desc">Don't take our word for it — hear from the Kingdom Gym community.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"I walked in with zero boxing experience and couldn't run a mile. Six months later I'm sparring, lost 28 lbs, and feel like a completely different person. Coach Juliet is the real deal."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">MR</div>
+          <div>
+            <div class="reviewer-name">Marcus R.</div>
+            <div class="reviewer-since">Member since 2023</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"I've tried every gym in Temecula. Kingdom Gym is different — the coaches actually care about your progress. The community keeps you coming back. Best investment I've made in myself."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">SA</div>
+          <div>
+            <div class="reviewer-name">Sofia A.</div>
+            <div class="reviewer-since">Member since 2022</div>
+          </div>
+        </div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <p>"Signed my 14-year-old up for youth boxing and it changed his life. He's more disciplined, focused in school, and genuinely loves coming to class. Couldn't recommend Kingdom Gym more."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">DT</div>
+          <div>
+            <div class="reviewer-name">David T.</div>
+            <div class="reviewer-since">Parent, member since 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div>
+        <span class="section-label">Get Started</span>
+        <h2 class="section-title">Ready to Join<br/>the Kingdom?</h2>
+        <p class="section-desc">Your first class is on us. Call, text, or fill out the form — Coach Juliet will reach out to set up your free trial session.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div class="contact-item-text">
+              <strong>(951) 722-0572</strong>
+              <span>Call or text anytime</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📧</div>
+            <div class="contact-item-text">
+              <strong>coachjuliet@thekingdomgym.com</strong>
+              <span>Email Coach Juliet directly</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <strong>Temecula, CA</strong>
+              <span>Serving Temecula & Murrieta</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div class="contact-item-text">
+              <strong>Mon–Sat: 6am – 9pm</strong>
+              <span>Sunday: 8am – 2pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>🥊 Claim Your Free Trial</h3>
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(951) 000-0000" />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="your@email.com" />
+        </div>
+        <div class="form-group">
+          <label>Interested In</label>
+          <select>
+            <option>Boxing Classes</option>
+            <option>Strength & Conditioning</option>
+            <option>Group Fitness</option>
+            <option>Personal Training</option>
+            <option>Youth Boxing</option>
+            <option>Fight Team</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Your Goal (optional)</label>
+          <textarea placeholder="Tell us what you want to achieve..."></textarea>
+        </div>
+        <button class="form-submit">🏆 Book My Free Trial</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><span>⚔️ Kingdom Gym</span> · Temecula, CA · <a href="tel:9517220572" style="color:#f4c542;">(951) 722-0572</a></p>
+  <p style="margin-top:8px;">© 2025 Kingdom Gym. All rights reserved. | Fitness & Boxing Temecula</p>
+</footer>
+
+</body>
+</html>
