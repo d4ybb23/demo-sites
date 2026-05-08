@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temecula Mobile Car Wash | Professional Auto Detailing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #003d82 0%, #0066cc 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b35;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background-color: #ff5520;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+            color: #003d82;
+            font-weight: 700;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,102,204,0.2);
+        }
+        
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .service-card h3 {
+            color: #003d82;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .about {
+            background-color: #f8f9fa;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: #003d82;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .testimonials {
+            background: linear-gradient(135deg, #003d82 0%, #0066cc 100%);
+            color: white;
+        }
+        
+        .testimonials .section-title {
+            color: white;
+        }
+        
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .testimonial-card p {
+            margin-bottom: 15px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            font-size: 0.95em;
+        }
+        
+        .contact {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            color: #003d82;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .contact-item {
+            padding: 30px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .contact-item h3 {
+            color: #003d82;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .contact-item p {
+            color: #666;
+            font-size: 1.1em;
+            word-break: break-word;
+        }
+        
+        footer {
+            background-color: #003d82;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        .highlight {
+            color: #ff6b35;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .section-title {
+                font-size: 1.6em;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <header>
+        <h1>Temecula Mobile Car Wash</h1>
+        <p>Professional Auto Detailing Comes to You</p>
+        <p style="font-size: 1em; margin-bottom: 25px; font-weight: 400;">24/7 Service • Premium Results • Your Home or Office</p>
+        <a href="tel:(951)383-5136" class="cta-button">📞 Call Now: (951) 383-5136</a>
+    </header>
+
+    <!-- Services Section -->
+    <section class="container">
+        <h2 class="section-title">Our Premium Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <h3>Hand Wash & Detail</h3>
+                <p>Expert hand washing with premium care products. Spot-free water, professional drying, and meticulous attention to every detail of your vehicle.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Full Interior Cleaning</h3>
+                <p>Complete interior detailing including vacuum, upholstery cleaning, leather conditioning, and air freshening. Your car interior will shine like new.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Ceramic Coating</h3>
+                <p>Professional-grade ceramic coating for long-lasting protection. Keeps your paint looking pristine and makes future cleaning easier.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🪞</div>
+                <h3>Window & Chrome Polish</h3>
+                <p>Crystal-clear windows and polished chrome details. We make every surface shine with professional-grade products and techniques.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛞</div>
+                <h3>Tire & Wheel Care</h3>
+                <p>Deep cleaning and protective coating for tires and wheels. Keeps them looking showroom-new and extends their lifespan.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌿</div>
+                <h3>Eco-Friendly Products</h3>
+                <p>We use environmentally responsible cleaning solutions that are safe for your vehicle, your family, and the environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">Why Choose Temecula Mobile Car Wash?</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Expert Care at Your Convenience</h2>
+                    <p><span class="highlight">We Come to You.</span> No need to waste time driving to a car wash. We bring professional detailing services directly to your driveway, office parking lot, or location of your choice.</p>
+                    <p><span class="highlight">Premium Quality.</span> We use only the finest automotive care products and techniques. Every vehicle receives the same meticulous attention to detail, regardless of size or condition.</p>
+                    <p><span class="highlight">Available 24/7.</span> Life is busy. We work around your schedule with flexible appointment times, including evenings and weekends.</p>
+                    <p><span class="highlight">Trusted by Temecula.</span> Serving the Temecula community with integrity, reliability, and outstanding results since we started serving this area.</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #0066cc, #003d82); border-radius: 8px; padding: 40px; color: white; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 300px;">
+                    <div>
+                        <div style="font-size: 2.5em; margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+                        <p style="font-size: 1.2em; margin-bottom: 20px;">Top-Rated Mobile Detailing</p>
+                        <p style="font-size: 0.95em; line-height: 1.8;">Trusted by hundreds of satisfied customers in Temecula for professional, convenient, and high-quality auto detailing services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Amazing service! They came to my house and my truck looks better than when I bought it. The attention to detail is incredible. Definitely booking again!"</p>
+                    <p class="testimonial-author">— Marcus T., Temecula</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"So convenient having them come to the office. The team was professional, efficient, and my car came out spotless. This is the way car washing should be done!"</p>
+                    <p class="testimonial-author">— Jennifer K., Temecula</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Best mobile detailing service in town. Fair pricing, excellent work, and they respect your time. Highly recommend to anyone who values quality and convenience."</p>
+                    <p class="testimonial-author">— David R., Temecula</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Ready for a Pristine Vehicle?</h2>
+            <p style="font-size: 1.1em; color: #666; margin-bottom: 20px;">Schedule your mobile detailing appointment today</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📞 Call Us</h3>
+                    <p><a href="tel:(951)383-5136" style="color: #0066cc; text-decoration: none; font-weight: 600;">(951) 383-5136</a></p>
+                    <p style="font-size: 0.9em; color: #999; margin-top: 10px;">Available 24/7 for appointments</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Service Area</h3>
+                    <p>Temecula, CA 92591</p>
+                    <p style="font-size: 0.9em; color: #999; margin-top: 10px;">We also serve surrounding areas</p>
+                </div>
+                <div class="contact-item">
+                    <h3>⏰ Flexible Hours</h3>
+                    <p>Morning, Afternoon & Evening</p>
+                    <p style="font-size: 0.9em; color: #999; margin-top: 10px;">Schedule at your convenience</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px; padding: 30px; background: linear-gradient(135deg, #0066cc, #003d82); color: white; border-radius: 8px;">
+                <h3 style="margin-bottom: 15px; font-size: 1.3em;">Special Offer</h3>
+                <p style="font-size: 1.1em; margin-bottom: 10px;">First-time customers: <span style="color: #ff6b35; font-weight: 700;">15% OFF your first service</span></p>
+                <p style="font-size: 0.95em;">Call (951) 383-5136 and mention this offer when booking</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Temecula Mobile Car Wash. All Rights Reserved. | Professional Auto Detailing Services</p>
+    </footer>
+</body>
+</html>
