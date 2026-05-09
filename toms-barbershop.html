@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tom's Barbershop - Premium Men's Grooming - Temecula, CA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #d4af37;
+            text-decoration: none;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            font-size: 14px;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: #d4af37;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #d4af37;
+            color: #1a1a1a;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: all 0.3s;
+            border: 2px solid #d4af37;
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: #d4af37;
+            transform: scale(1.05);
+        }
+        
+        .services {
+            padding: 80px 20px;
+            background: #f8f8f8;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        .about {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-text h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        
+        .about-text p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+        }
+        
+        .testimonials {
+            padding: 80px 20px;
+            background: #f8f8f8;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stars {
+            color: #d4af37;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-text {
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        
+        .contact {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-method {
+            padding: 30px;
+        }
+        
+        .contact-method h3 {
+            font-size: 20px;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+        
+        .contact-method p {
+            font-size: 18px;
+            color: #ddd;
+        }
+        
+        .contact-method a {
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .contact-method a:hover {
+            color: white;
+        }
+        
+        footer {
+            background: #0d0d0d;
+            color: #999;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">✂️ Tom's Barbershop</div>
+                <div class="contact-info">
+                    <div>📍 Temecula, CA</div>
+                    <div>📞 <a href="tel:(951)303-3700">(951) 303-3700</a></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium Barbering Expertise</h1>
+            <p>Classic cuts, modern styles, and exceptional service</p>
+            <a href="tel:(951)303-3700" class="cta-button">BOOK YOUR APPOINTMENT</a>
+        </div>
+    </section>
+    
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>Haircuts</h3>
+                    <p>Professional haircuts with premium styling techniques. From classic fades to modern cuts, we deliver the perfect look.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🧔</div>
+                    <h3>Beard Grooming</h3>
+                    <p>Complete beard care including detailed trimming, shaping, and styling for the perfect gentleman's look.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💈</div>
+                    <h3>Hot Shaves</h3>
+                    <p>Traditional straight razor shaves using premium products. A timeless grooming experience you'll love.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">👕</div>
+                    <h3>Lineup & Detailing</h3>
+                    <p>Precise edge work and detailed grooming for that sharp, polished appearance you want.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Color Services</h3>
+                    <p>Professional hair coloring services. We can refresh your look with vibrant or subtle color enhancements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Tom's Barbershop</h2>
+                <p>Since opening in Temecula, Tom's Barbershop has been the go-to destination for men who demand quality grooming and professional service.</p>
+                <p>Our experienced barbers combine traditional techniques with modern trends to give you exactly what you're looking for. Every client receives personalized attention and expert care.</p>
+                <p>We believe that a great haircut is an investment in yourself, and we're committed to delivering exceptional results every single time you visit.</p>
+            </div>
+            <div class="about-image">🏪</div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Tom's is the best barbershop in Temecula. My haircut always looks sharp and the barbers really know what they're doing. Highly recommend!"</p>
+                    <div class="testimonial-author">— Mark Johnson</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Great atmosphere, professional barbers, and fair prices. I've been going for 2 years and I'm never disappointed. This is my go-to spot!"</p>
+                    <div class="testimonial-author">— David Martinez</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The attention to detail is incredible. They take their time and really listen to what you want. Worth every penny. Friendly staff too!"</p>
+                    <div class="testimonial-author">— James Williams</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <div class="contact-content">
+            <h2>Get Your Perfect Cut Today</h2>
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h3>📞 Call Us</h3>
+                    <p><a href="tel:(951)303-3700">(951) 303-3700</a></p>
+                </div>
+                <div class="contact-method">
+                    <h3>📍 Location</h3>
+                    <p>Temecula, CA<br/>Open Mon-Sat: 9AM - 7PM<br/>Sunday: 10AM - 5PM</p>
+                </div>
+                <div class="contact-method">
+                    <h3>💬 Walk-Ins Welcome</h3>
+                    <p>No appointment needed.<br/>Accepting walk-in customers!<br/>Short wait times available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 Tom's Barbershop. All rights reserved. | Built with care for the Temecula community</p>
+    </footer>
+</body>
+</html>
