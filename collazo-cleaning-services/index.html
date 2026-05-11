@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collazo Cleaning Services - Professional Services in New York</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a7a8a 0%, #fff 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+        
+        .phone-link {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .phone-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1a7a8a 0%, #fff 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.1);
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 0.8s ease;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #1a7a8a;
+            padding: 18px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .section h2 {
+            font-size: 36px;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #1a7a8a;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #fff;
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            padding: 30px;
+            border-radius: 10px;
+            background: #f9f9f9;
+            border-left: 5px solid #fff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            background: white;
+        }
+        
+        .service-card h3 {
+            color: #1a7a8a;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            color: #1a7a8a;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .about-text p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .about-highlight {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .about-highlight-icon {
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .about-image {
+            background: linear-gradient(135deg, #1a7a8a 0%, #fff 100%);
+            border-radius: 10px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, #1a7a8a 0%, #fff 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .contact-item p {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255,255,255,0.5);
+            transition: border-color 0.3s ease;
+        }
+        
+        .contact-item a:hover {
+            border-bottom-color: white;
+        }
+        
+        footer {
+            background: #1a1a1a;
+            color: #888;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+        
+        footer a {
+            color: #aaa;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: white;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero {
+                padding: 60px 20px;
+                min-height: auto;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .section h2 {
+                font-size: 28px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Collazo Cleaning Services</div>
+            <a href="tel:8555550123" class="phone-link">📞 (855) 555-0123</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div>
+            <h1>Professional Services in New York</h1>
+            <p>Trusted by New York residents and businesses for quality service</p>
+            <a href="tel:8555550123" class="cta-button">Call Now: (855) 555-0123</a>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>✓ Residential Cleaning</h3>
+                    <p>Professional deep cleaning for homes in New York</p>
+                </div>
+                <div class="service-card">
+                    <h3>✓ Commercial Cleaning</h3>
+                    <p>Keep your New York business spotless</p>
+                </div>
+                <div class="service-card">
+                    <h3>✓ Move-in/Move-out Cleaning</h3>
+                    <p>Ready your home for a fresh start</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <h2>About Collazo Cleaning Services</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Serving New York with Excellence</h3>
+                    <p>At Collazo Cleaning Services, we're committed to delivering exceptional service to every customer in New York. Our experienced team takes pride in their work and ensures complete satisfaction.</p>
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon">✓</div>
+                        <div>
+                            <strong>Licensed & Insured</strong>
+                            <p>Professional credentials and full coverage</p>
+                        </div>
+                    </div>
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon">✓</div>
+                        <div>
+                            <strong>Fast Response Time</strong>
+                            <p>Same-day or next-day service available</p>
+                        </div>
+                    </div>
+                    <div class="about-highlight">
+                        <div class="about-highlight-icon">✓</div>
+                        <div>
+                            <strong>Competitive Pricing</strong>
+                            <p>Transparent quotes with no hidden fees</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div style="text-align: center;">
+                        <div style="font-size: 48px; margin-bottom: 10px;">⭐</div>
+                        <div style="font-size: 16px;">5-Star Service</div>
+                        <div style="font-size: 14px; margin-top: 10px; opacity: 0.9;">Trusted by hundreds of New York customers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section contact-section">
+        <div class="container">
+            <h2 style="color: white;">Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📞 Call Us</h3>
+                    <p><a href="tel:8555550123">(855) 555-0123</a></p>
+                    <p style="font-size: 14px; opacity: 0.8;">Available Mon-Sun</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Location</h3>
+                    <p>New York, NY</p>
+                    <p style="font-size: 14px; opacity: 0.8;">Serving the New York area</p>
+                </div>
+                <div class="contact-item">
+                    <h3>⏰ Hours</h3>
+                    <p>Monday - Friday: 8am - 6pm</p>
+                    <p style="font-size: 14px; opacity: 0.8;">Emergency service available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 Collazo Cleaning Services. All rights reserved. | Website designed by <a href="https://d4ybrandbuilder.com">D4Y Brand Builder</a></p>
+    </footer>
+</body>
+</html>
