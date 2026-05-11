@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Licensed General Contractor - Renovations & Repairs</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        .header { background: linear-gradient(135deg, #2d6a2d 0%, #245424 100%); color: #fff; padding: 20px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .logo { font-size: 24px; font-weight: bold; color: #f4a61d; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .header-content nav { display: flex; gap: 30px; }
+        .header-content nav a { color: #fff; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .header-content nav a:hover { color: #f4a61d; }
+        .cta-button { background: #f4a61d; color: #2d6a2d; padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s; box-shadow: 0 4px 10px rgba(244,166,29,0.3); }
+        .cta-button:hover { background: #f5b640; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(244,166,29,0.4); }
+        main { margin-top: 80px; }
+        .hero { background: linear-gradient(135deg, #2d6a2d 0%, #245424 100%); color: #fff; padding: 100px 20px; text-align: center; }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 48px; margin-bottom: 20px; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); }
+        .hero p { font-size: 22px; margin-bottom: 40px; opacity: 0.95; }
+        .hero .cta-button { font-size: 18px; padding: 15px 40px; display: inline-block; }
+        .section { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+        .section h2 { font-size: 40px; margin-bottom: 50px; text-align: center; color: #2d6a2d; }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card { background: #fff; border-radius: 10px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: all 0.3s; border-left: 5px solid #f4a61d; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 35px rgba(0,0,0,0.15); }
+        .service-card h3 { color: #2d6a2d; margin-bottom: 15px; font-size: 22px; }
+        .service-card p { color: #666; line-height: 1.8; }
+        .about { background: #f5f5f5; }
+        .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about p { color: #666; margin-bottom: 20px; font-size: 16px; line-height: 1.8; }
+        .about h3 { color: #2d6a2d; margin-bottom: 20px; font-size: 24px; }
+        .contact-section { background: linear-gradient(135deg, #2d6a2d 0%, #245424 100%); color: #fff; text-align: center; }
+        .contact-content { max-width: 600px; margin: 0 auto; }
+        .contact-section h2 { color: #fff; }
+        .contact-info { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0; text-align: left; }
+        .contact-item { background: rgba(244,166,29,0.1); padding: 20px; border-radius: 8px; border-left: 4px solid #f4a61d; }
+        .contact-item h4 { color: #f4a61d; margin-bottom: 10px; }
+        .footer { background: #1d3f1d; color: #999; text-align: center; padding: 30px 20px; font-size: 14px; }
+        .footer a { color: #f4a61d; text-decoration: none; }
+        .footer a:hover { text-decoration: underline; }
+        @media (max-width: 768px) {
+            .header-content nav { display: none; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 18px; }
+            .section h2 { font-size: 28px; }
+            .about-content { grid-template-columns: 1fr; }
+            .contact-info { grid-template-columns: 1fr; }
+            .hero { padding: 60px 20px; }
+            .section { padding: 50px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">🔨 General Contractor</div>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <a href="tel:+1234567890" class="cta-button">Call Now</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Licensed General Contractor</h1>
+                <p>Professional Renovations & Construction Services</p>
+                <p>Residential & Commercial Projects • Fully Licensed & Insured</p>
+                <a href="tel:+1234567890" class="cta-button">📞 Call Now (123) 456-7890</a>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Home Renovations</h3>
+                    <p>Complete home renovation projects from kitchen and bathroom remodels to whole-home transformations. Quality craftsmanship guaranteed.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Additions & Expansions</h3>
+                    <p>Add valuable space to your home with professional additions. We handle design, permits, and construction.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Commercial Construction</h3>
+                    <p>Commercial projects of all sizes. From retail buildouts to office spaces, we deliver on time and on budget.</p>
+                </div>
+                <div class="service-card">
+                    <h3>General Repairs</h3>
+                    <p>Structural repairs, roof work, siding, decks, and more. We handle all aspects of building and repair.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about section">
+            <h2>Why Choose Us?</h2>
+            <div class="about-content">
+                <div>
+                    <h3>📋 Licensed & Insured</h3>
+                    <p>Fully licensed general contractor with comprehensive insurance coverage. Your project is protected from start to finish.</p>
+                    <h3>🏆 Quality Workmanship</h3>
+                    <p>Years of experience delivering high-quality construction and renovation projects that stand the test of time.</p>
+                </div>
+                <div>
+                    <h3>📅 On-Time Delivery</h3>
+                    <p>We respect your time and budget. Projects are completed on schedule with transparent communication throughout.</p>
+                    <h3>💡 Design Support</h3>
+                    <p>Get expert guidance on designs, materials, and project planning. We help you make the best choices for your space.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section section">
+            <div class="contact-content">
+                <h2>Start Your Project Today</h2>
+                <p>Contact our licensed general contractor for a free consultation and project estimate.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>📞 Call Us</h4>
+                        <p><a href="tel:+1234567890" style="color: #fff;">(123) 456-7890</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>📍 Service Area</h4>
+                        <p>Local Area & Surrounding Region</p>
+                    </div>
+                </div>
+                <a href="tel:+1234567890" class="cta-button" style="display: inline-block; margin-top: 20px;">Call Now for Estimate</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Website designed by <a href="http://d4ybrandbuilder.com">D4Y Brand Builder</a> | <a href="http://d4ybrandbuilder.com">d4ybrandbuilder.com</a></p>
+    </footer>
+</body>
+</html>
