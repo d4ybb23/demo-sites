@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Plumbing Solutions | Expert Plumbing Services in Temecula, CA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .phone-header {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #003366 0%, #004d99 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            background-color: #ff6b35;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: #e55a2b;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            color: #003366;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-left: 5px solid #ff6b35;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 51, 102, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 51, 102, 0.15);
+        }
+        
+        .service-card h3 {
+            color: #003366;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .about-section {
+            background-color: #f8f9fa;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            color: #003366;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .features-list {
+            list-style: none;
+            color: #333;
+        }
+        
+        .features-list li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .features-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .testimonials-section {
+            background-color: #003366;
+            color: white;
+        }
+        
+        .testimonials-section h2 {
+            color: white;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b35;
+        }
+        
+        .testimonial-card p {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #ff6b35;
+        }
+        
+        .contact-section {
+            background-color: #f8f9fa;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 51, 102, 0.1);
+        }
+        
+        .contact-info h3 {
+            color: #003366;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .contact-method {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .contact-method:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .contact-method-label {
+            color: #666;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .contact-method-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #003366;
+            text-decoration: none;
+        }
+        
+        .contact-method-value:hover {
+            color: #ff6b35;
+        }
+        
+        .service-hours {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 51, 102, 0.1);
+        }
+        
+        .service-hours h3 {
+            color: #003366;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .hours-list {
+            list-style: none;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .day {
+            font-weight: 600;
+            color: #003366;
+        }
+        
+        .time {
+            color: #666;
+        }
+        
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        footer p {
+            margin: 0.5rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            h2 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                🔧 Pro Plumbing Solutions
+            </div>
+            <div class="phone-header">📞 (951) 555-0101</div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Expert Plumbing Services When You Need Them</h1>
+            <p>Fast, Reliable, and Professional Plumbing Solutions for Your Home or Business</p>
+            <a href="#contact" class="cta-button">Call Now for Free Estimate</a>
+        </div>
+    </section>
+    
+    <section class="container">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>💧 Drain Cleaning & Repair</h3>
+                <p>Expert drain cleaning, unclogging, and repair services for kitchens, bathrooms, and commercial properties. We use advanced techniques to solve even the toughest clogs.</p>
+            </div>
+            <div class="service-card">
+                <h3>🚰 Water Line Installation</h3>
+                <p>Professional water line installation and repair. Whether you need a new line or emergency repairs, our licensed plumbers have you covered with quality workmanship.</p>
+            </div>
+            <div class="service-card">
+                <h3>🛁 Bathroom Plumbing</h3>
+                <p>Complete bathroom plumbing services including fixture installation, repairs, and remodeling. We handle everything from faucets to full bathroom renovations.</p>
+            </div>
+            <div class="service-card">
+                <h3>🚽 Toilet Repair & Installation</h3>
+                <p>Fast toilet repair and replacement services. Leaky tanks, running toilets, or complete replacements—we get your bathroom working perfectly again.</p>
+            </div>
+            <div class="service-card">
+                <h3>⚠️ Emergency 24/7 Service</h3>
+                <p>Available for emergencies 24 hours a day, 7 days a week. Burst pipes, gas leaks, or major backups—call us anytime for immediate response.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about-section">
+        <div class="container">
+            <h2>Why Choose Pro Plumbing Solutions?</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Trusted Local Plumbers Since 2015</h3>
+                    <p>With over a decade of experience serving Temecula and the surrounding communities, Pro Plumbing Solutions has built a reputation for honest, skilled, and dependable plumbing work.</p>
+                    <p>Our team of licensed and insured plumbers is committed to providing the highest quality service at competitive prices. We believe in doing the job right the first time.</p>
+                </div>
+                <ul class="features-list">
+                    <li>Licensed & Fully Insured</li>
+                    <li>Same-Day Emergency Service</li>
+                    <li>Transparent Pricing</li>
+                    <li>Free Estimates</li>
+                    <li>Satisfaction Guaranteed</li>
+                    <li>Expert Diagnostics</li>
+                    <li>Fast Response Times</li>
+                    <li>Eco-Friendly Solutions</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"Pro Plumbing Solutions fixed our emergency water leak in under an hour. Their technicians were professional, courteous, and fair with pricing. Highly recommend!"</p>
+                    <div class="testimonial-author">— Jennifer Martinez, Homeowner</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"We've used Pro Plumbing for our commercial property maintenance for 3 years now. They're reliable, responsive, and their work quality is exceptional. Worth every penny."</p>
+                    <div class="testimonial-author">— David Chen, Property Manager</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Called them for a bathroom remodel and they transformed the space beautifully. They coordinated everything perfectly and stayed within our budget. Amazing experience!"</p>
+                    <div class="testimonial-author">— Sarah Thompson, Homeowner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-method">
+                        <span class="contact-method-label">Phone</span>
+                        <a href="tel:9515550101" class="contact-method-value">(951) 555-0101</a>
+                    </div>
+                    <div class="contact-method">
+                        <span class="contact-method-label">Email</span>
+                        <a href="mailto:proplumbing@email.com" class="contact-method-value">proplumbing@email.com</a>
+                    </div>
+                    <div class="contact-method">
+                        <span class="contact-method-label">Service Area</span>
+                        <span class="contact-method-value">Temecula, CA & Surrounding Areas</span>
+                    </div>
+                </div>
+                <div class="service-hours">
+                    <h3>Service Hours</h3>
+                    <ul class="hours-list">
+                        <li>
+                            <span class="day">Monday - Friday</span>
+                            <span class="time">7:00 AM - 6:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="day">Saturday</span>
+                            <span class="time">8:00 AM - 4:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="day">Sunday</span>
+                            <span class="time">10:00 AM - 2:00 PM</span>
+                        </li>
+                        <li>
+                            <span class="day">Emergencies</span>
+                            <span class="time">24/7 Available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 Pro Plumbing Solutions. All rights reserved.</p>
+        <p>Licensed | Insured | Bonded</p>
+        <p>Serving Temecula and the surrounding communities with pride.</p>
+    </footer>
+</body>
+</html>
