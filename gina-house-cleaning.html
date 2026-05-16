@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gina House Cleaning Services - Professional Home Cleaning in Temecula</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .contact-info {
+            font-size: 0.9rem;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            margin-left: 1.5rem;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #667eea;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .services-section {
+            background: #f8f9fa;
+        }
+        
+        .about-section {
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #666;
+            font-size: 1.05rem;
+        }
+        
+        .benefits-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .benefits-list li {
+            padding: 0.7rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #666;
+        }
+        
+        .benefits-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .testimonials-section {
+            background: #f8f9fa;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.05rem;
+        }
+        
+        .testimonial-role {
+            color: #667eea;
+            font-size: 0.9rem;
+        }
+        
+        .contact-section {
+            background: white;
+        }
+        
+        .contact-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .contact-content h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-method {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .contact-method h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-method p {
+            font-size: 1.05rem;
+        }
+        
+        .contact-method a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        .address {
+            background: rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .contact-info {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .contact-info a {
+                margin: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-methods {
+                flex-direction: column;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">✨ Gina House Cleaning</div>
+            <div class="contact-info">
+                <a href="tel:9517608106">📞 (951) 760-8106</a>
+            </div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Home Deserves to Shine</h1>
+            <p>Professional, Reliable, Affordable House Cleaning Services in Temecula</p>
+            <a href="tel:9517608106" class="cta-button">Call for a Free Estimate</a>
+        </div>
+    </section>
+    
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Cleaning Services</h2>
+            <p class="section-subtitle">Comprehensive solutions for every cleaning need</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🏠 Regular House Cleaning</h3>
+                    <p>Weekly, bi-weekly, or monthly cleaning services to keep your home fresh and spotless. We handle all rooms and focus on the areas that matter most to you.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>✨ Deep Cleaning</h3>
+                    <p>Thorough, top-to-bottom cleaning that reaches every corner. Perfect for spring cleaning, move-in/move-out cleaning, or when your home needs serious refresh.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>🪟 Move-In/Move-Out Cleaning</h3>
+                    <p>Complete cleaning service for new homes or when you're leaving. We prepare your space professionally for the next chapter, inside and out.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>🛏️ Turnover Cleaning</h3>
+                    <p>Perfect for rental property managers and Airbnb hosts. Fast, efficient turnovers between guests with attention to detail that keeps properties pristine.</p>
+                </div>
+                
+                <div class="service-card">
+                    <h3>🧹 Post-Construction Cleaning</h3>
+                    <p>Specialized cleaning after renovation or construction work. We remove dust, debris, and ensure your newly renovated space is truly move-in ready.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Choose Gina House Cleaning?</h2>
+                    <p>With over 15 years of experience serving Temecula families and businesses, Gina House Cleaning has built a reputation for excellence, reliability, and attention to detail.</p>
+                    <p>We're not just a cleaning service—we're your partner in maintaining a clean, healthy, happy home.</p>
+                    
+                    <ul class="benefits-list">
+                        <li>Fully Insured & Bonded</li>
+                        <li>Eco-Friendly Cleaning Products</li>
+                        <li>Same-Day Service Available</li>
+                        <li>Flexible Scheduling</li>
+                        <li>Free In-Home Estimates</li>
+                        <li>Satisfaction 100% Guaranteed</li>
+                    </ul>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; padding: 2rem; color: white; text-align: center;">
+                    <h3 style="font-size: 2.5rem; margin-bottom: 1rem;">15+</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">Years of Experience</p>
+                    
+                    <h3 style="font-size: 2.5rem; margin-bottom: 1rem;">2000+</h3>
+                    <p style="font-size: 1.1rem; margin-bottom: 2rem;">Happy Customers</p>
+                    
+                    <h3 style="font-size: 2.5rem; margin-bottom: 1rem;">100%</h3>
+                    <p style="font-size: 1.1rem;">Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <p class="section-subtitle">Don't just take our word for it</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Gina and her team transformed our home! They were professional, punctual, and thorough. Our house has never looked better. We've already scheduled them for bi-weekly service!"</p>
+                    <div class="testimonial-author">Sarah Martinez</div>
+                    <div class="testimonial-role">Temecula, CA</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"We manage 3 rental properties and Gina House Cleaning handles the turnovers. They're reliable, fast, and thorough. Our guests always comment on how clean the homes are!"</p>
+                    <div class="testimonial-author">James Thompson</div>
+                    <div class="testimonial-role">Property Manager</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Best decision I made! I used to spend my weekends cleaning. Now I have time for family. Their prices are fair and the quality is amazing. Highly recommend!"</p>
+                    <div class="testimonial-author">Michelle Chen</div>
+                    <div class="testimonial-role">Temecula, CA</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Ready to Experience the Difference?</h2>
+                <p>Get Your Free Estimate Today – No Obligations</p>
+                
+                <div class="address">
+                    <strong>Gina House Cleaning Services</strong><br>
+                    Temecula, CA 92590<br>
+                    Serving All of Temecula Valley
+                </div>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <h3>📞 Call Us</h3>
+                        <p><a href="tel:9517608106">(951) 760-8106</a></p>
+                    </div>
+                    <div class="contact-method">
+                        <h3>📱 Text Us</h3>
+                        <p><a href="sms:9517608106">Text (951) 760-8106</a></p>
+                    </div>
+                    <div class="contact-method">
+                        <h3>⏰ Hours</h3>
+                        <p>Mon-Sat: 8am-6pm<br>Emergency Service Available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Gina House Cleaning Services. All rights reserved. | Fully Insured & Bonded | Serving Temecula Valley</p>
+    </footer>
+</body>
+</html>
