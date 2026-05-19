@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Catering Temecula - Event Catering Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #E74C3C;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .contact-info a:hover {
+            color: #E74C3C;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            background: #F39C12;
+            color: white;
+            padding: 18px 45px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: #E67E22;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .services h2 {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #2C3E50;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .services h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #E74C3C;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: #f8f8f8;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid #F39C12;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            color: #E74C3C;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            background: #f0f0f0;
+            padding: 80px 20px;
+            margin: 80px 0;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 42px;
+            color: #2C3E50;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #E74C3C;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .testimonials h2 {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #2C3E50;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .testimonials h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: #E74C3C;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .testimonial p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #E74C3C;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .stars {
+            color: #F39C12;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .contact-item strong {
+            color: #F39C12;
+        }
+
+        .contact-item a {
+            color: #F39C12;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services h2,
+            .testimonials h2,
+            .contact h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">🍽️ Creative Catering Temecula</div>
+            <div class="contact-info">
+                <a href="tel:951-310-2351">📞 (951) 310-2351</a>
+                <a href="#contact">Get Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Professional Event Catering</h1>
+            <p>Delicious Food, Professional Service, Memorable Events</p>
+            <a href="#contact" class="cta-button">Request a Quote Today</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Catering Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🎉 Corporate Events</h3>
+                <p>Impress your clients and employees with professional catering. From board meetings to holiday parties, we handle it all.</p>
+            </div>
+            <div class="service-card">
+                <h3>💒 Weddings & Receptions</h3>
+                <p>Make your special day unforgettable with elegant catering. Custom menus tailored to your vision and budget.</p>
+            </div>
+            <div class="service-card">
+                <h3>🎂 Private Celebrations</h3>
+                <p>Birthdays, anniversaries, and family gatherings. We create memorable dining experiences for your special moments.</p>
+            </div>
+            <div class="service-card">
+                <h3>🍽️ Custom Menus</h3>
+                <p>Work with our culinary team to design the perfect menu. From appetizers to dessert, we've got you covered.</p>
+            </div>
+            <div class="service-card">
+                <h3>📦 Full Service Setup</h3>
+                <p>Complete event catering including serving staff, setup, and cleanup. Let us handle the details.</p>
+            </div>
+            <div class="service-card">
+                <h3>🚐 On-Site Delivery</h3>
+                <p>Professional delivery and setup at your venue. Fresh, hot food prepared and served with style.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-content">
+            <div>
+                <h2>About Creative Catering</h2>
+                <p>Creative Catering Temecula has been serving the Temecula community with exceptional catering services for over a decade.</p>
+                <p>We believe that great food brings people together. That's why we source premium ingredients and prepare everything fresh for your event.</p>
+                <p>Our team of experienced chefs and service professionals are dedicated to making your event a success.</p>
+            </div>
+            <div class="about-box">
+                <h3 style="color: #2C3E50; margin-bottom: 20px;">Why Choose Us?</h3>
+                <ul style="list-style: none; color: #666;">
+                    <li style="margin-bottom: 15px;">✓ Professional catering experience</li>
+                    <li style="margin-bottom: 15px;">✓ Premium quality ingredients</li>
+                    <li style="margin-bottom: 15px;">✓ Custom menu options</li>
+                    <li style="margin-bottom: 15px;">✓ Full event coordination</li>
+                    <li style="margin-bottom: 15px;">✓ Flexible pricing</li>
+                    <li>✓ Exceptional service</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>Client Testimonials</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Creative Catering made our corporate event amazing! The food was delicious, the service was impeccable. Highly recommend!"</p>
+                <div class="testimonial-author">- Robert Wilson, Event Coordinator</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Our wedding reception was perfect thanks to Creative Catering. Every detail was perfect, and our guests loved the food!"</p>
+                <div class="testimonial-author">- Jessica & Michael Chen, Newlyweds</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Professional, reliable, and delicious. Creative Catering is our go-to for all company events. Always exceeds expectations!"</p>
+                <div class="testimonial-author">- Patricia Anderson, Business Owner</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2>Plan Your Event With Us</h2>
+            <p>Contact Creative Catering Temecula for a free consultation and custom quote</p>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <strong>📞 Phone:</strong> <a href="tel:951-310-2351">(951) 310-2351</a>
+                </div>
+                <div class="contact-item">
+                    <strong>📍 Service Area:</strong> Temecula, Murrieta, and Surrounding Communities
+                </div>
+                <div class="contact-item">
+                    <strong>💬 Consultation:</strong> Free quote and menu planning available
+                </div>
+                <div class="contact-item">
+                    <strong>⏰ Availability:</strong> Flexible scheduling for your event
+                </div>
+            </div>
+
+            <a href="tel:951-310-2351" class="cta-button">Call Now: (951) 310-2351</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Creative Catering Temecula. All rights reserved. | Professional Event Catering Services</p>
+    </footer>
+</body>
+</html>
