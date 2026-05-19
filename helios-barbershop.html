@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helio's Barbershop - Professional Haircuts in Temecula, CA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #D4A574;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .contact-info a:hover {
+            color: #D4A574;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+            color: white;
+            padding: 140px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 40px;
+            color: #D4A574;
+        }
+
+        .cta-button {
+            background: #D4A574;
+            color: #1a1a1a;
+            padding: 18px 45px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: #E8C547;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Services Section */
+        .services {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .services h2 {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .services h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #D4A574;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background: #f8f8f8;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 4px solid #D4A574;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            color: #1a1a1a;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* About Section */
+        .about {
+            background: #f0f0f0;
+            padding: 80px 20px;
+            margin: 80px 0;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about h2 {
+            font-size: 42px;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+        }
+
+        .about p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid #D4A574;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .testimonials h2 {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .testimonials h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #D4A574;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .testimonial p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #D4A574;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .stars {
+            color: #D4A574;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        /* Pricing */
+        .pricing {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .pricing h2 {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .pricing h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #D4A574;
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            background: white;
+            border: 2px solid #D4A574;
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .price-card h3 {
+            font-size: 22px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .price {
+            font-size: 36px;
+            color: #D4A574;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .price-card p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .contact-item strong {
+            color: #D4A574;
+        }
+
+        .contact-item a {
+            color: #D4A574;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services h2,
+            .testimonials h2,
+            .contact h2,
+            .pricing h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">✂️ Helio's Barbershop</div>
+            <div class="contact-info">
+                <a href="tel:951-595-5149">📞 (951) 595-5149</a>
+                <a href="#contact">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium Barbershop Services</h1>
+            <p>Expert Cuts, Fades & Beard Grooming in Temecula</p>
+            <a href="#contact" class="cta-button">Book Your Appointment</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>✂️ Haircuts</h3>
+                <p>Professional haircuts tailored to your style. Modern cuts, classic styles, and custom designs all available.</p>
+            </div>
+            <div class="service-card">
+                <h3>🎯 Fades</h3>
+                <p>Clean, precise fades and tapers. We specialize in sharp lineups and detailed work that looks professional.</p>
+            </div>
+            <div class="service-card">
+                <h3>🧔 Beard Grooming</h3>
+                <p>Beard sculpting, shaping, and maintenance. Hot towel shaves and conditioning treatments available.</p>
+            </div>
+            <div class="service-card">
+                <h3>🛁 Hot Towel Shaves</h3>
+                <p>Relaxing traditional hot towel shaves. The perfect complement to your haircut or beard service.</p>
+            </div>
+            <div class="service-card">
+                <h3>👶 Kids Haircuts</h3>
+                <p>Friendly, patient service for children. We make sure your kids feel comfortable and look great.</p>
+            </div>
+            <div class="service-card">
+                <h3>💈 Custom Designs</h3>
+                <p>Creative designs and patterns. Let us add a personalized touch to your look.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-content">
+            <div>
+                <h2>About Helio's Barbershop</h2>
+                <p>Located in the heart of Temecula, Helio's Barbershop has been serving the community with expert barbering services for years.</p>
+                <p>Our experienced barbers are passionate about their craft. Every cut is executed with precision and attention to detail. We take pride in making our customers look and feel their best.</p>
+                <p>Walk-ins always welcome, but appointments are prioritized. Book online or call us for the fastest service.</p>
+            </div>
+            <div class="about-box">
+                <h3 style="color: #1a1a1a; margin-bottom: 20px;">Why Choose Us?</h3>
+                <ul style="list-style: none; color: #666;">
+                    <li style="margin-bottom: 15px;">✓ Experienced, professional barbers</li>
+                    <li style="margin-bottom: 15px;">✓ Precision cuts and clean fades</li>
+                    <li style="margin-bottom: 15px;">✓ Friendly, welcoming atmosphere</li>
+                    <li style="margin-bottom: 15px;">✓ Walk-ins welcome</li>
+                    <li style="margin-bottom: 15px;">✓ Online booking available</li>
+                    <li>✓ Reasonable prices</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <h2>Pricing</h2>
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>Haircut</h3>
+                <div class="price">$20</div>
+                <p>Professional haircut with wash and finish</p>
+            </div>
+            <div class="price-card">
+                <h3>Fade or Taper</h3>
+                <div class="price">$25</div>
+                <p>Clean fade or taper with detailed lineup</p>
+            </div>
+            <div class="price-card">
+                <h3>Beard Service</h3>
+                <div class="price">$15</div>
+                <p>Beard trim, sculpt, or hot towel shave</p>
+            </div>
+            <div class="price-card">
+                <h3>Full Service</h3>
+                <div class="price">$35</div>
+                <p>Haircut + beard + hot towel shave</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What Customers Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Daniel at Helio's gave me the best haircut I've had in years. Super professional and friendly. Highly recommend!"</p>
+                <div class="testimonial-author">- Michael Johnson</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"My kids love getting their hair cut here. The barbers are patient and patient with kids. Great atmosphere!"</p>
+                <div class="testimonial-author">- Sarah Martinez</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"The precision and detail in the fade work is outstanding. Always perfect lineups. Worth every penny!"</p>
+                <div class="testimonial-author">- James Rodriguez</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2>Book Your Appointment Today</h2>
+            <p>Get a professional haircut from Temecula's top barbershop</p>
+            
+            <div class="contact-details">
+                <div class="contact-item">
+                    <strong>📞 Phone:</strong> <a href="tel:951-595-5149">(951) 595-5149</a>
+                </div>
+                <div class="contact-item">
+                    <strong>📍 Location:</strong> Temecula Parkway, Temecula, CA
+                </div>
+                <div class="contact-item">
+                    <strong>⏰ Hours:</strong> Monday-Friday 9am-6pm | Saturday 9am-2pm
+                </div>
+                <div class="contact-item">
+                    <strong>💬 Booking:</strong> Call us or book online for faster service
+                </div>
+            </div>
+
+            <a href="tel:951-595-5149" class="cta-button">Call Now: (951) 595-5149</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Helio's Barbershop. All rights reserved. | Professional Barbering in Temecula, CA</p>
+    </footer>
+</body>
+</html>
