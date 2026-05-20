@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitchell Salazar Painting | Professional Painting Services in Temecula</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav .phone {
+            color: #ffd700;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .cta-button {
+            background: #ffd700;
+            color: #1e3c72;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1e3c72;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            color: #2a5298;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .about h2 {
+            font-size: 2.5rem;
+            color: #1e3c72;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            color: #555;
+        }
+        
+        .about-content p {
+            margin-bottom: 15px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #1e3c72;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #ffd700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-stars {
+            color: #ffd700;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .testimonial-text {
+            color: #555;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            color: #1e3c72;
+            font-weight: bold;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .contact-item p {
+            font-size: 1.1rem;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .contact-item a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0d1f3c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .services h2,
+            .about h2,
+            .testimonials h2,
+            .contact h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            nav .container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">🎨 Mitchell Salazar Painting</div>
+            <a href="tel:(929)555-0101" class="phone">📞 (929) 555-0101</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Transform Your Space with Professional Painting</h1>
+        <p>Quality craftsmanship meets attention to detail. Mitchell Salazar Painting has been serving Temecula homeowners with expert interior and exterior painting since 2015.</p>
+        <a href="#contact" class="cta-button">Get Your Free Estimate Today</a>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Interior Painting</h3>
+                    <p>Professional interior painting for bedrooms, living areas, kitchens, and bathrooms. We use premium quality paints and deliver flawless finishes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌳</div>
+                    <h3>Exterior Painting</h3>
+                    <p>Protect and beautify your home's exterior with durable, weather-resistant paint. We handle house painting, trim work, and deck staining.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Cabinet Refinishing</h3>
+                    <p>Give your kitchen cabinets a fresh new look. Professional cabinet painting and refinishing services that transform your space affordably.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Drywall & Repairs</h3>
+                    <p>Complete drywall repair, patching, and finishing services. We prepare surfaces properly for perfect paint results every time.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Custom Color Consulting</h3>
+                    <p>Not sure what color to choose? Our color consultation service helps you find the perfect palette for your space.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>About Mitchell Salazar Painting</h2>
+            <div class="about-content">
+                <p>With over 8 years of professional painting experience, Mitchell Salazar has become one of Temecula's most trusted painting contractors. Our commitment to quality workmanship and customer satisfaction sets us apart from the competition.</p>
+                <p>We take pride in every project, large or small. From residential homes to commercial properties, we deliver exceptional results that exceed expectations. Our team uses only the highest quality materials and techniques to ensure your paint job lasts for years to come.</p>
+                <p>Whether you need a single room painted or a complete home transformation, we're here to help. We offer competitive pricing, flexible scheduling, and free consultations to all Temecula area homeowners.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Mitchell transformed our living room with a fresh coat of paint. His attention to detail and professionalism were outstanding. Highly recommend!"</p>
+                    <p class="testimonial-author">- Sarah Johnson, Temecula Homeowner</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"We hired Mitchell for our exterior painting project. He was punctual, professional, and delivered beautiful results. Best painter in the valley!"</p>
+                    <p class="testimonial-author">- Robert Martinez, Temecula Business Owner</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The cabinet refinishing work was incredible. For the price, we couldn't believe the quality. Mitchell is a true professional!"</p>
+                    <p class="testimonial-author">- Jennifer Lee, Kitchen Renovation Client</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2>Ready to Get Started?</h2>
+            <p>Contact Mitchell Salazar Painting today for a free, no-obligation estimate. We'll discuss your project and provide a detailed quote within 24 hours.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📞 Call Us</h3>
+                    <p><a href="tel:(929)555-0101">(929) 555-0101</a></p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Location</h3>
+                    <p>Temecula, CA</p>
+                </div>
+            </div>
+            
+            <p style="margin-top: 30px; font-size: 0.95rem; color: #ddd;">
+                Free estimates • Fully insured • Licensed & bonded<br>
+                Interior & Exterior Painting • Residential & Commercial
+            </p>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Mitchell Salazar Painting. All rights reserved. | Professional Painting Services in Temecula, CA</p>
+    </footer>
+</body>
+</html>
