@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orozco Landscaping Services - Professional Landscape Design & Maintenance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #3a6b1f 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .phone-header {
+            font-size: 18px;
+            font-weight: 600;
+            color: #a8d5a8;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #2d5016 0%, #4a8c2a 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            max-width: 600px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ffc107;
+            color: #2d5016;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255,193,7,0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: #ffb300;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,193,7,0.4);
+        }
+        
+        .services {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        
+        .services h2 {
+            text-align: center;
+            font-size: 42px;
+            color: #2d5016;
+            margin-bottom: 60px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #4a8c2a;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            color: #2d5016;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .about {
+            background: #f8f9f7;
+            padding: 80px 20px;
+            margin: 80px 0;
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about h2 {
+            font-size: 42px;
+            color: #2d5016;
+            margin-bottom: 30px;
+        }
+        
+        .about p {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.9;
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            background: linear-gradient(135deg, #2d5016 0%, #4a8c2a 100%);
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .testimonials {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            font-size: 42px;
+            color: #2d5016;
+            margin-bottom: 60px;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #ffc107;
+        }
+        
+        .stars {
+            color: #ffc107;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-text {
+            color: #555;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            color: #2d5016;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .contact {
+            background: #2d5016;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact h2 {
+            font-size: 42px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .contact-item h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #a8d5a8;
+        }
+        
+        .contact-item p {
+            font-size: 18px;
+            color: white;
+        }
+        
+        .contact-item a {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            background: #1a3010;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .services h2, .about h2, .testimonials h2, .contact h2 {
+                font-size: 32px;
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">🌿 Orozco Landscaping</div>
+            <div class="phone-header">📞 (951) 555-0248</div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>Transform Your Outdoor Space</h1>
+        <p>Professional landscaping services that turn your yard into a beautiful oasis. Expert design, quality workmanship, guaranteed satisfaction.</p>
+        <a href="tel:9515550248" class="cta-button">📞 Call for Free Quote</a>
+    </section>
+    
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>🌱 Landscape Design</h3>
+                <p>Custom landscape design tailored to your vision. We create functional, beautiful outdoor spaces that complement your home's architecture and your lifestyle.</p>
+            </div>
+            <div class="service-card">
+                <h3>🏡 Lawn Maintenance</h3>
+                <p>Regular lawn care and maintenance services including mowing, edging, fertilization, and seasonal cleanup. We keep your lawn healthy and vibrant year-round.</p>
+            </div>
+            <div class="service-card">
+                <h3>🌳 Tree & Shrub Care</h3>
+                <p>Professional trimming, pruning, and removal services. We maintain healthy trees and shrubs that enhance your landscape's natural beauty and safety.</p>
+            </div>
+            <div class="service-card">
+                <h3>🪨 Hardscaping</h3>
+                <p>Quality hardscape installations including patios, walkways, retaining walls, and more. Built to last with premium materials and expert craftsmanship.</p>
+            </div>
+            <div class="service-card">
+                <h3>💧 Irrigation Systems</h3>
+                <p>Professional irrigation design and installation. Smart watering systems that keep your landscape healthy while conserving water and reducing utility costs.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about">
+        <div class="about-container">
+            <div>
+                <h2>Why Choose Orozco?</h2>
+                <p>With over 15 years of experience in Temecula and surrounding areas, Orozco Landscaping Services has established a reputation for excellence, attention to detail, and customer satisfaction.</p>
+                <p>We approach every project as if it were our own home. From initial consultation to final cleanup, we deliver professional, high-quality landscaping solutions at competitive prices.</p>
+                <p>Our team is fully licensed, bonded, and insured. We stand behind every project with a satisfaction guarantee.</p>
+            </div>
+            <div class="about-image">
+                Expert landscapers serving Temecula since 2011
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Orozco did an amazing job on our front yard landscape. They were professional, punctual, and the quality of work exceeded our expectations. Highly recommend!"</p>
+                <p class="testimonial-author">— Sarah Martinez, Temecula</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"Best landscaping company in town! They transformed our backyard into a beautiful retreat. Great communication throughout the project and fair pricing."</p>
+                <p class="testimonial-author">— James Chen, Temecula</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">"We've been using Orozco for monthly lawn maintenance for 3 years. They never miss a beat. Reliable, professional, and genuinely care about their work."</p>
+                <p class="testimonial-author">— Patricia Williams, Temecula</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <div class="contact-container">
+            <h2>Get Your Free Consultation Today</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p><a href="tel:9515550248">(951) 555-0248</a></p>
+                    <p style="font-size: 14px; margin-top: 10px; color: #aaa;">Available 7am - 6pm daily</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📧 Email</h3>
+                    <p><a href="mailto:orozco.landscaping@email.com">orozco.landscaping@email.com</a></p>
+                    <p style="font-size: 14px; margin-top: 10px; color: #aaa;">Response within 24 hours</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Service Area</h3>
+                    <p>Temecula, CA & Surrounding Areas</p>
+                    <p style="font-size: 14px; margin-top: 10px; color: #aaa;">Fully Licensed & Insured</p>
+                </div>
+            </div>
+            <a href="tel:9515550248" class="cta-button">Call Now for Free Quote</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 Orozco Landscaping Services. All rights reserved. Professional landscaping for Temecula and surrounding areas.</p>
+    </footer>
+</body>
+</html>
