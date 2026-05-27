@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuppy Puppy Mobile Grooming - Professional Dog Grooming in Temecula</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #e8b4f3 0%, #d4a5f5 100%);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #e8b4f3 0%, #d4a5f5 100%);
+            color: #fff;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #fff;
+            color: #d4a5f5;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #d4a5f5;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card h3 {
+            color: #d4a5f5;
+            margin-bottom: 10px;
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .price {
+            color: #e8b4f3;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background: #fff;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .about-content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #e8b4f3 0%, #d4a5f5 100%);
+            color: #fff;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .contact-item p {
+            font-size: 18px;
+            word-break: break-all;
+        }
+        
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .nav-links {
+                gap: 15px;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo">🐩 Yuppy Puppy</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Mobile Dog Grooming</h1>
+            <p>Premium grooming service delivered right to your door in Temecula & surrounding areas</p>
+            <a href="#contact" class="cta-button">Book Your Appointment Today</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Full Grooming Package</h3>
+                    <p>Complete bath, haircut, nail trim, ear cleaning, and sanitary trim. Perfect for maintaining your pup's appearance.</p>
+                    <p class="price">From $65</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🛁</div>
+                    <h3>Bath & Tidy</h3>
+                    <p>Fresh bath, quick trim, nail clip, and ear cleaning. Great for dogs between full grooming appointments.</p>
+                    <p class="price">From $45</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💅</div>
+                    <h3>Express Service</h3>
+                    <p>Nail trim, ear cleaning, and sanitary trim. Quick service for busy pup parents.</p>
+                    <p class="price">From $25</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🐾</div>
+                    <h3>Cat Grooming</h3>
+                    <p>Gentle grooming for our feline friends. Bath, trim, and nail care with extra patience and care.</p>
+                    <p class="price">From $55</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎀</div>
+                    <h3>Special Occasion</h3>
+                    <p>Creative styling for your pup's special day. Show cuts, creative grooming, and special handling.</p>
+                    <p class="price">From $85</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About Yuppy Puppy Mobile Grooming</h2>
+                <p>
+                    With over 8 years of professional grooming experience, Yuppy Puppy Mobile Grooming brings expert care directly to your home. 
+                    We understand that every dog is unique, and we treat each pup with the love, patience, and expertise they deserve.
+                </p>
+                <p>
+                    Our mobile grooming service eliminates stress for anxious dogs while providing you with convenience. No more car trips or waiting rooms—
+                    just a professional groomer arriving with everything needed to make your dog look and feel their absolute best.
+                </p>
+                <p>
+                    We specialize in working with dogs and cats of all ages and temperaments, using only premium, pet-safe grooming products and gentle handling techniques.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Missy did an amazing job grooming my Golden Retriever! She was so patient and gentle. Max came out looking and feeling amazing. Highly recommend!"
+                    </p>
+                    <p class="testimonial-author">— Sarah M., Temecula</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "The mobile service is a lifesaver! No more stressing about getting my anxious pup to the groomer. Yuppy Puppy came right to our home and did an incredible job."
+                    </p>
+                    <p class="testimonial-author">— James T., Murrieta</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">
+                        "Best grooming experience we've had! My poodle's coat has never looked better. Missy really knows her stuff and genuinely cares about each dog."
+                    </p>
+                    <p class="testimonial-author">— Jennifer L., Wildomar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Ready to Pamper Your Pup?</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📞 Call Us</h3>
+                    <p><a href="tel:9493568864">(949) 356-8864</a></p>
+                    <p style="font-size: 14px; margin-top: 10px;">Available 7 days a week</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>📍 Service Area</h3>
+                    <p>Temecula, Murrieta, Wildomar & Surrounding Areas</p>
+                    <p style="font-size: 14px; margin-top: 10px;">Mobile service to your home</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>🎯 Book Now</h3>
+                    <p>Text or call to schedule your free consultation</p>
+                    <p style="font-size: 14px; margin-top: 10px;">Same-day appointments available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Yuppy Puppy Mobile Grooming. All rights reserved. | Professional Dog & Cat Grooming | Temecula, CA</p>
+    </footer>
+</body>
+</html>
