@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastian Landscaping - Professional Tree & Yard Services in Temecula</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #3d6b1f 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #7cb342;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(45, 80, 22, 0.85), rgba(61, 107, 31, 0.85)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="30" fill="none" stroke="%23fff" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="1200" height="600" fill="%232d5016"/><rect width="1200" height="600" fill="url(%23pattern)"/></svg>');
+            background-attachment: fixed;
+            color: white;
+            padding: 8rem 2rem;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            line-height: 1.8;
+        }
+        
+        .phone-highlight {
+            background: #7cb342;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin: 1.5rem 0;
+        }
+        
+        .cta-button {
+            background: #7cb342;
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(124, 179, 66, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #6b9939;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(124, 179, 66, 0.4);
+        }
+        
+        .services {
+            padding: 5rem 2rem;
+            background: #f5f5f5;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2d5016;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #7cb342;
+            border-radius: 2px;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        .about {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: #2d5016;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        .about-image {
+            background: linear-gradient(135deg, #2d5016 0%, #3d6b1f 100%);
+            height: 400px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: rgba(255,255,255,0.3);
+        }
+        
+        .testimonials {
+            padding: 5rem 2rem;
+            background: #f5f5f5;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid #7cb342;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #2d5016;
+        }
+        
+        .stars {
+            color: #ffc107;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #2d5016 0%, #3d6b1f 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+        }
+        
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+            color: #7cb342;
+        }
+        
+        .contact-item p {
+            font-size: 1.1rem;
+        }
+        
+        .contact-item a {
+            color: #7cb342;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-cta {
+            background: #7cb342;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .contact-cta:hover {
+            background: #6b9939;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background: #1a3409;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">🌳 Sebastian Landscaping</div>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>Professional Landscaping & Tree Services</h1>
+        <p>Transform Your Outdoor Space Today</p>
+        <p>Expert tree trimming, yard maintenance, and landscaping for Temecula & surrounding areas</p>
+        <div class="phone-highlight">📞 (760) 472-9568</div>
+        <a href="#contact" class="cta-button">Get Your Free Estimate</a>
+    </section>
+    
+    <section id="services" class="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">🌲</div>
+                <h3>Tree Trimming & Pruning</h3>
+                <p>Professional tree trimming and pruning services to keep your landscape healthy, safe, and beautiful year-round.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⛓️</div>
+                <h3>Tree Removal</h3>
+                <p>Safe and efficient tree removal with proper equipment and techniques. We handle trees of all sizes.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🌱</div>
+                <h3>Yard Maintenance</h3>
+                <p>Regular yard care including lawn maintenance, landscaping updates, and seasonal cleanup services.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🪨</div>
+                <h3>Landscape Design</h3>
+                <p>Custom landscape design and installation to enhance your property's curb appeal and value.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧹</div>
+                <h3>Debris Removal</h3>
+                <p>Quick and efficient cleanup and removal of yard waste, branches, and debris from your property.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <h2 class="section-title">About Sebastian Landscaping</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Your Trusted Local Landscaping Partner</h2>
+                <p>With over 10 years of experience serving the Temecula Valley, Sebastian Landscaping has earned a reputation for quality workmanship and exceptional customer service.</p>
+                <p>We're fully insured and equipped with professional-grade equipment to handle any landscaping or tree service project, from small yard cleanups to major landscape renovations.</p>
+                <p>Whether you need regular maintenance or a complete landscape transformation, we're here to help bring your vision to life.</p>
+                <p><strong>Service Areas:</strong> Temecula, Murrieta, Fallbrook, and surrounding communities</p>
+            </div>
+            <div class="about-image">🏞️</div>
+        </div>
+    </section>
+    
+    <section id="testimonials" class="testimonials">
+        <h2 class="section-title">What Our Customers Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Sebastian and his team did an amazing job trimming our large oak trees. They were professional, punctual, and cleaned up everything. Highly recommended!"</p>
+                <div class="testimonial-author">- Maria Garcia, Temecula</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Best landscaping service in Temecula! Fair pricing, great communication, and excellent results. We've been using them for 3 years now."</p>
+                <div class="testimonial-author">- Robert Chen, Murrieta</div>
+            </div>
+            <div class="testimonial">
+                <div class="stars">★★★★★</div>
+                <p>"Removed a dangerous tree from our backyard safely and efficiently. Insurance and everything was handled professionally. Will definitely call again!"</p>
+                <div class="testimonial-author">- Jennifer Martinez, Fallbrook</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="contact">
+        <h2>Ready to Transform Your Landscape?</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Contact us today for a free, no-obligation estimate</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>📞 Call Us</h3>
+                <p><a href="tel:(760)472-9568">(760) 472-9568</a></p>
+                <p>Available 7 days a week</p>
+            </div>
+            <div class="contact-item">
+                <h3>📧 Email Us</h3>
+                <p><a href="mailto:76047299z@gmail.com">76047299z@gmail.com</a></p>
+                <p>Response within 24 hours</p>
+            </div>
+            <div class="contact-item">
+                <h3>📍 Service Area</h3>
+                <p>Temecula, Murrieta, Fallbrook & surrounding areas</p>
+                <p>Fully insured • Free estimates</p>
+            </div>
+        </div>
+        
+        <a href="tel:(760)472-9568" class="contact-cta">Call Now for Free Estimate</a>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 Sebastian Landscaping. All rights reserved. | Professional Tree & Yard Services | Fully Insured</p>
+    </footer>
+</body>
+</html>
