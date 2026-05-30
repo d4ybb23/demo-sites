@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mike Handyman Services | Professional Home Repairs & Remodeling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+        
+        .header-contact {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .header-contact div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .phone-number {
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #ffd700;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #2d5a7b 0%, #1a3a52 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #1a3a52;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .cta-button:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+        
+        .services {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+            color: #1a3a52;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #1a3a52;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 16px;
+        }
+        
+        .about {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about h2 {
+            font-size: 36px;
+            color: #1a3a52;
+            margin-bottom: 30px;
+        }
+        
+        .about p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .about-features {
+            list-style: none;
+            margin-top: 30px;
+        }
+        
+        .about-features li {
+            padding: 12px 0;
+            font-size: 16px;
+            color: #333;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .about-features li:before {
+            content: "✓ ";
+            color: #ffd700;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .about-image {
+            background: linear-gradient(135deg, #2d5a7b 0%, #1a3a52 100%);
+            border-radius: 8px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+        }
+        
+        .testimonials {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #ffd700;
+        }
+        
+        .stars {
+            color: #ffd700;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #1a3a52;
+        }
+        
+        .contact {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2d5a7b 0%, #1a3a52 100%);
+            color: white;
+        }
+        
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            font-size: 36px;
+            color: #ffd700;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            margin-bottom: 5px;
+            font-size: 20px;
+        }
+        
+        .contact-details p {
+            opacity: 0.9;
+            font-size: 16px;
+        }
+        
+        .contact-details a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 16px;
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .contact-form button {
+            background: #ffd700;
+            color: #1a3a52;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form button:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: #0d1f2d;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-contact {
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 300px;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🔧 Mike Handyman Services</div>
+                <div class="header-contact">
+                    <div>
+                        <span>📞</span>
+                        <a href="tel:828-468-8708" class="phone-number">828-468-8708</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Professional Home Repairs & Remodeling</h1>
+            <p>Expert craftsmanship for all your home improvement needs. Licensed, insured, and trusted in Temecula.</p>
+            <a href="#contact" class="cta-button">Get Your Free Estimate Today</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🔨</div>
+                    <h3>Home Repairs</h3>
+                    <p>From drywall repair to door replacement, we handle all general home repairs with precision and care.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Painting & Finishing</h3>
+                    <p>Professional interior and exterior painting services that transform your space with quality results.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Home Modifications</h3>
+                    <p>Custom renovations and modifications tailored to your vision and budget.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Plumbing Repairs</h3>
+                    <p>Expert plumbing services for residential needs, from fixtures to leak repairs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3>Electrical Work</h3>
+                    <p>Licensed electrical services for safe and reliable installations and repairs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <h2>About Mike Handyman Services</h2>
+                    <p>With over 15 years of experience in home repair and remodeling, Mike has built a reputation for quality workmanship and customer satisfaction. We take pride in every project, big or small.</p>
+                    <p>Our commitment is simple: deliver exceptional results on time and within budget. We treat your home like our own.</p>
+                    <ul class="about-features">
+                        <li>Licensed & Insured</li>
+                        <li>Free Estimates</li>
+                        <li>15+ Years Experience</li>
+                        <li>Same-Day Service Available</li>
+                        <li>Guaranteed Satisfaction</li>
+                    </ul>
+                </div>
+                <div class="about-image">⭐</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Mike transformed our kitchen with a complete renovation. His attention to detail and professionalism were exceptional. Highly recommend!"</p>
+                    <p class="testimonial-author">- Sarah M., Temecula</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Had an emergency water leak and Mike arrived same day. Fixed it perfectly and the price was fair. Can't ask for better service!"</p>
+                    <p class="testimonial-author">- James T., Temecula</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"From painting to structural repairs, Mike does quality work. Professional, on-time, and communicates every step. Best handyman in town!"</p>
+                    <p class="testimonial-author">- Maria L., Temecula</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Call Us</h3>
+                            <p><a href="tel:828-468-8708">828-468-8708</a></p>
+                            <p>Available 7am - 9pm, 7 days a week</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:mike.hmspro@gmail.com">mike.hmspro@gmail.com</a></p>
+                            <p>Respond within 24 hours</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Service Area</h3>
+                            <p>Temecula, Murrieta, and surrounding areas</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="alert('Thank you! We\'ll be in touch soon.'); return false;">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone">
+                    <textarea placeholder="Tell us about your project..." required></textarea>
+                    <button type="submit">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mike Handyman Services. All rights reserved. | Licensed & Insured | Temecula, CA</p>
+    </footer>
+</body>
+</html>
