@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HG Lawn And Landscape - Temecula CA Professional Lawn Care</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2d5016 0%, #3d6b1f 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 14px;
+        }
+        
+        .phone-badge {
+            background: #4CAF50;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            transition: background 0.3s;
+        }
+        
+        .phone-badge:hover {
+            background: #45a049;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2d5016 0%, #3d6b1f 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+        
+        .cta-button {
+            background: #4CAF50;
+            color: white;
+            padding: 16px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .cta-button:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #2d5016;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .service-card h3 {
+            color: #2d5016;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .service-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about h2 {
+            color: #2d5016;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .about p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid #4CAF50;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial p {
+            color: #666;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #2d5016;
+        }
+        
+        .testimonial-role {
+            color: #999;
+            font-size: 13px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background: #2d5016;
+            color: white;
+        }
+        
+        .contact h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #4CAF50;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: #4CAF50;
+        }
+        
+        .contact-item p {
+            font-size: 16px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a3009;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .cta-button {
+                padding: 14px 28px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                🌱 HG Lawn And Landscape
+            </div>
+            <div class="contact-header">
+                <a href="tel:9514355037" class="phone-badge">📞 (951) 435-5037</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Professional Lawn Care & Landscaping</h1>
+        <p>Transform Your Outdoor Space into a Beautiful Oasis</p>
+        <a href="#contact" class="cta-button">Get Your Free Quote Today</a>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>Lawn Maintenance</h3>
+                    <p>Professional mowing, edging, and lawn care services to keep your yard looking pristine year-round. Weekly, bi-weekly, or monthly options available.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌳</div>
+                    <h3>Landscaping Design</h3>
+                    <p>Custom landscape designs and installations. From new bed creation to complete outdoor transformations, we bring your vision to life.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🪴</div>
+                    <h3>Planting & Mulch</h3>
+                    <p>Professional plant installation, mulching, and seasonal plantings. We use high-quality materials and expert techniques for lasting results.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌿</div>
+                    <h3>Yard Cleanup</h3>
+                    <p>Spring and fall cleanup services including debris removal, leaf raking, and general yard maintenance to keep your property clean.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💧</div>
+                    <h3>Irrigation Services</h3>
+                    <p>Efficient irrigation system installation and maintenance. We optimize water usage while keeping your landscape healthy and vibrant.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div>
+                    <h2>Why Choose HG Lawn And Landscape?</h2>
+                    <p>With years of experience serving the Temecula and Murrieta communities, HG Lawn And Landscape is your trusted partner for all your outdoor maintenance needs.</p>
+                    <p>We take pride in delivering exceptional results on every project, whether it's a simple lawn mowing or a complete landscape renovation. Our team is dedicated to excellence and customer satisfaction.</p>
+                    <p>We offer competitive pricing, reliable service, and attention to detail that sets us apart. When you choose HG, you're choosing quality, professionalism, and peace of mind.</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 80px; margin: 30px 0;">🏡</div>
+                    <p style="font-size: 18px; color: #4CAF50; font-weight: bold;">Serving Temecula & Murrieta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"HG Lawn And Landscape completely transformed our backyard! Their team was professional, on-time, and the results exceeded our expectations. We've been using them for maintenance ever since."</p>
+                    <div class="testimonial-author">Jennifer Martinez</div>
+                    <div class="testimonial-role">Homeowner, Temecula</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Outstanding service! They handle all our landscaping needs and always go the extra mile. The quality of their work is unmatched in the area. Highly recommended!"</p>
+                    <div class="testimonial-author">David Chen</div>
+                    <div class="testimonial-role">Property Manager, Murrieta</div>
+                </div>
+                <div class="testimonial">
+                    <p>"We've tried other landscapers, but HG Lawn And Landscape is the best. They're reliable, professional, and offer fair pricing. Our neighbors have already asked for their contact information!"</p>
+                    <div class="testimonial-author">Sarah Thompson</div>
+                    <div class="testimonial-role">Homeowner, Murrieta</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-item">
+                    <h3>📞 Call or Text</h3>
+                    <a href="tel:9514355037">(951) 435-5037</a>
+                    <p>Available Monday-Friday 7am-6pm</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Service Area</h3>
+                    <p>Temecula & Murrieta, CA</p>
+                    <p>Free quotes for all services</p>
+                </div>
+                <div class="contact-item">
+                    <h3>✨ Quality Guaranteed</h3>
+                    <p>Professional, Reliable, Affordable</p>
+                    <p>Licensed & Insured</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 HG Lawn And Landscape. All rights reserved. Serving Temecula & Murrieta, CA</p>
+    </footer>
+</body>
+</html>
