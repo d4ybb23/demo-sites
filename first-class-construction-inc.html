@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Class Construction Inc - Professional Services in Temecula, CA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #34495E 0%, #1C2833 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #34495E;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #34495E 0%, #1C2833 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .hero .phone {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .primary-cta {
+            display: inline-block;
+            background: white;
+            color: #34495E;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .primary-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #1C2833;
+            text-align: center;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            background: #ECF0F1;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #34495E;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            color: #1C2833;
+            margin-bottom: 10px;
+        }
+        
+        .service-card p {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .about {
+            background: #ECF0F1;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-top: 4px solid #34495E;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial p {
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            color: #1C2833;
+            font-weight: bold;
+        }
+        
+        .testimonial-role {
+            font-size: 13px;
+            color: #999;
+        }
+        
+        .contact {
+            background: linear-gradient(135deg, #34495E 0%, #1C2833 100%);
+            color: white;
+        }
+        
+        .contact h2 {
+            color: white;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: opacity 0.3s;
+        }
+        
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+        
+        .contact-item p {
+            font-size: 14px;
+            margin-top: 10px;
+            opacity: 0.95;
+        }
+        
+        footer {
+            background: #1C2833;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .primary-cta {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">First Class Construction Inc</div>
+            <a href="tel:(951) 514-8887" class="cta-button">📞 Call Now</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <h1>First Class Construction Inc</h1>
+        <p>Professional contractor services in Temecula, CA</p>
+        <div class="phone">
+            <a href="tel:(951) 514-8887" style="color: white; text-decoration: none;">(951) 514-8887</a>
+        </div>
+        <a href="tel:(951) 514-8887" class="primary-cta">👉 Get Your Free Quote Today</a>
+    </section>
+    
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>✓ General Construction</h3>
+                <p>Professional quality service delivered on time, every time.</p>
+            </div>
+            <div class="service-card">
+                <h3>✓ Renovations</h3>
+                <p>Professional quality service delivered on time, every time.</p>
+            </div>
+            <div class="service-card">
+                <h3>✓ Custom Builds</h3>
+                <p>Professional quality service delivered on time, every time.</p>
+            </div>
+            <div class="service-card">
+                <h3>✓ Remodeling</h3>
+                <p>Professional quality service delivered on time, every time.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about">
+        <div class="about-content">
+            <h2>Why Choose Us?</h2>
+            <p style="font-size: 16px; color: #555; line-height: 1.8; text-align: center;">
+                With years of experience serving the Temecula community, we pride ourselves on delivering 
+                exceptional quality and customer satisfaction. Our team is dedicated to providing reliable, 
+                professional service at competitive rates. We're committed to being your trusted local partner 
+                for all your contractor needs.
+            </p>
+        </div>
+    </section>
+    
+    <section id="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <p>"Outstanding service and professional team! Highly recommended."</p>
+                <div class="testimonial-author">John Martinez</div>
+                <div class="testimonial-role">Homeowner</div>
+            </div>
+            <div class="testimonial">
+                <p>"Fast, efficient, and affordable. Will definitely use again!"</p>
+                <div class="testimonial-author">Sarah Johnson</div>
+                <div class="testimonial-role">Business Owner</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <h2>Ready to Get Started?</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <p>📞 Call Us</p>
+                <a href="tel:(951) 514-8887">(951) 514-8887</a>
+                <p>Available for appointments</p>
+            </div>
+            <div class="contact-item">
+                <p>📍 Service Area</p>
+                <p>Temecula, CA & Surrounding Areas</p>
+            </div>
+            <div class="contact-item">
+                <p>⚡ Quick Response</p>
+                <p>We typically respond within 24 hours</p>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <a href="tel:(951) 514-8887" class="primary-cta">📞 Call for Your Free Quote</a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 First Class Construction Inc. All rights reserved. | Serving Temecula, CA</p>
+        <p>Professional contractor services you can trust.</p>
+    </footer>
+</body>
+</html>
