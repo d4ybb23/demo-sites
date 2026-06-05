@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byrd & Co - Virtual Assistant Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1e3a5f 0%, #1e3a5fdd 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav h1 {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            margin-left: 2rem;
+            transition: opacity 0.3s;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #1e3a5fcc 100%);
+            color: white;
+            padding: 6rem 20px;
+            text-align: center;
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            margin: 0.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background: #f39c12;
+            color: #1e3a5f;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 5rem 20px;
+            background: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1e3a5f;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 4px solid #f39c12;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            color: #1e3a5f;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .service-card p {
+            color: #666;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 20px;
+            background: white;
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #1e3a5f 0%, #1e3a5fcc 100%);
+            color: white;
+            padding: 5rem 20px;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .phone-link {
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: inline-block;
+            color: #f39c12;
+        }
+        
+        /* Footer */
+        footer {
+            background: #222;
+            color: #888;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav a {
+                margin-left: 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn {
+                padding: 0.8rem 2rem;
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 15px;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <h1>Byrd & Co</h1>
+            <div>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Byrd & Co</h2>
+            <p>Administrative Excellence for Growing Businesses</p>
+            <button class='btn btn-primary' onclick='alert("Please call for service")'>Contact Us</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                
+        <div class="service-card">
+          <h3>Email & Calendar Management</h3>
+          <p>Stay organized with professional inbox and schedule management</p>
+        </div>
+        
+        <div class="service-card">
+          <h3>Administrative Support</h3>
+          <p>Handle all your day-to-day administrative needs</p>
+        </div>
+        
+        <div class="service-card">
+          <h3>Business Organization</h3>
+          <p>Streamline your workflows and boost productivity</p>
+        </div>
+        
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container about-content">
+            <h2 class="section-title">About Us</h2>
+            <p>Managing the details so you can focus on growth. We provide comprehensive virtual assistant services to busy professionals and entrepreneurs in Murrieta and beyond.</p>
+            <p>We're proud to serve the Murrieta community with quality virtual assistant services services. With years of experience and a commitment to excellence, we're your trusted partner for all your needs.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📞 Call Us</h3>
+                    <p style='color: #999;'>Contact us today</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📍 Location</h3>
+                    <p>Murrieta/Temecula, CA</p>
+                </div>
+                <div class="contact-item">
+                    <h3>⏰ Available</h3>
+                    <p>Mon - Sun<br>Contact for hours</p>
+                </div>
+            </div>
+            <button class='btn btn-primary' onclick='alert("Please call for service")'>Contact Us</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Byrd & Co. All rights reserved.</p>
+        <p>Website designed by D4Y Brand Builder | <a href="https://d4ybrandbuilder.com" style="color: #f39c12;">d4ybrandbuilder.com</a></p>
+    </footer>
+</body>
+</html>
