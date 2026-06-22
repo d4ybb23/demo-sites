@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Plumbing Services - Professional Plumbing Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e90ff 0%, #0047ab 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            font-size: 1.1em;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #ff5252;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #1e90ff;
+            border-bottom: 3px solid #1e90ff;
+            padding-bottom: 10px;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: #f5f5f5;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(30, 144, 255, 0.4);
+        }
+        
+        .service-card h3 {
+            color: #1e90ff;
+            margin-bottom: 10px;
+        }
+        
+        .testimonials {
+            background: #f9f9f9;
+            padding: 40px 20px;
+            border-radius: 8px;
+        }
+        
+        .testimonial {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-left: 4px solid #1e90ff;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #1e90ff;
+            margin-top: 10px;
+        }
+        
+        .about {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .contact-item strong {
+            display: block;
+            color: #1e90ff;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .section h2 {
+                font-size: 1.5em;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Quick Plumbing Services</h1>
+        <p>Expert Plumbing Solutions for Your Home</p>
+        <a href="tel:(951) 555-0104" class="cta-button">📞 Call for Service Today</a>
+    </header>
+    
+    <div class="container">
+        <section class="section">
+            <h2>🔧 Our Plumbing Services</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Emergency Repairs</h3>
+                    <p>24/7 emergency plumbing service for leaks, burst pipes, and other urgent issues.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Drain Cleaning</h3>
+                    <p>Professional drain cleaning and unclogging using modern equipment.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Water Heaters</h3>
+                    <p>Installation, repair, and maintenance of water heaters of all types.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fixture Installation</h3>
+                    <p>Kitchen and bathroom fixture installation including sinks, faucets, and more.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Toilet Repair</h3>
+                    <p>Quick and reliable toilet repairs and replacement services.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>💬 Customer Testimonials</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"Very professional team! They fixed our burst pipe quickly and cleaned up after themselves. Great service!"</p>
+                    <div class="testimonial-author">— Patricia D., Homeowner</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Called for an emergency leak and they arrived within 30 minutes. Saved our basement from flooding!"</p>
+                    <div class="testimonial-author">— James W., Satisfied Customer</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Competitive pricing and honest recommendations. They don't try to upsell unnecessary work. Highly trusted!"</p>
+                    <div class="testimonial-author">— Carol M., Regular Client</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>📋 Why Choose Us?</h2>
+            <div class="about">
+                <p>Quick Plumbing Services brings over 7 years of professional plumbing experience to every job. We're licensed, insured, and dedicated to solving your plumbing problems quickly and affordably.</p>
+                <p style="margin-top: 15px;">We pride ourselves on honest pricing, quality workmanship, and customer satisfaction. No job is too big or too small.</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>📞 Contact Information</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Call Now</strong>
+                    <a href="tel:(951) 555-0104" style="color: #1e90ff; text-decoration: none;">(951) 555-0104</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Service Area</strong>
+                    <p>Temecula, CA & Surrounding</p>
+                </div>
+                <div class="contact-item">
+                    <strong>Always Available</strong>
+                    <p>24/7 Emergency<br>Service</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 Quick Plumbing Services. All rights reserved.</p>
+    </footer>
+</body>
+</html>
